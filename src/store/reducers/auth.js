@@ -1,4 +1,5 @@
 import { AUTH_SUCCESS } from '../actions/actionTypes';
+
 const initialState = {
   token: null
 }

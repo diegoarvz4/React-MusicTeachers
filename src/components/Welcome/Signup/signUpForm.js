@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import signUpStart from '../store/actions/signup';
+import signUpStart from  '../../../store/actions/signup';
+
 class SignUpForm extends React.Component {
   
   constructor() {
@@ -29,6 +30,7 @@ class SignUpForm extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSignUp}>
+        <h1>Sign Up</h1>
         <label htmlFor='username'>Username</label>
         <input type='text' value={this.state.username} onChange={this.handleInput} name='username'/>
 
@@ -44,6 +46,8 @@ class SignUpForm extends React.Component {
         <input type='password' value={this.state.password_confirmation} onChange={this.handleInput} name='password_confirmation'/>
 
         <button type='submit'>Sign up</button>
+        <hr />
+        <span onClick={this.props.showLogin}>Login</span>
       </form>
     );
   }

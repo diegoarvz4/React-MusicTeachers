@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-import SignUpForm from './components/signUpForm';
-import LoginForm from './components/loginForm';
+import Home from './components/Home/Home';
+import Welcome from './components/Welcome/Welcome';
 
-function App() {
+function App({ authentication, isAuthenticated }) {
+  console.log( isAuthenticated);
   return (
     <div className="App">
-      <SignUpForm />
-      <hr />
-      <LoginForm />
-      <hr />
+      {isAuthenticated 
+        ? <Home /> 
+        : <Welcome />
+      }
     </div>
   );
 }
@@ -18,6 +19,7 @@ function App() {
 const mapStateToProps = (state) => {
   return {
     authentication: state.authReducer,
+    isAuthenticated: state.authReducer.token !== null
   };
 }
 
