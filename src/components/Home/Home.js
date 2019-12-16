@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './nav/navbar';
 import SearchTeachers from './Search/SearchTeachers';
+import MusicTeachers from './MusicTeachers/MusicTeachers';
 import { connect } from 'react-redux';
 import { musicalInstrumentsStart } from '../../store/actions/musicalInstruments';
 import { musicTeachersStart } from '../../store/actions/musicTeachers';
@@ -26,6 +27,7 @@ class Home extends React.Component {
       <div>
         <Navbar />
         <SearchTeachers />
+        <MusicTeachers />
       </div>
     );
   }

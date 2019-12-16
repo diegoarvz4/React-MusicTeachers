@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   authReducer,
   musInst: musicalInstrumentsReducer,
   musicGenres: musicGenresReducer,
-  musicTeachers: musicTeachersReducer
+  musTeachers: musicTeachersReducer
 })
 
 export default rootReducer;

@@ -1,8 +1,6 @@
 import * as actionTypes from '../actions/actionTypes';
 
-const initialState = {
-  musicTeachers: []
-}
+const initialState = []
 
 export default (state = initialState, action) => {
   switch (action.type) {
