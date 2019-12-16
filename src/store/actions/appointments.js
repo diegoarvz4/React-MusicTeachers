@@ -8,12 +8,12 @@ const appointmentSuccess = data => {
       user_id: data.user_id,
       music_teacher_id: data.music_teacher_id,
       date: data.date,
-      time: data.time,
     }
   }
 }
 
 const appointmentCreate = (token, appointment) => {
+  console.log(appointment)
   return dispatch => {
     axios.post('/appointments', appointment , {
       headers: {
@@ -25,8 +25,7 @@ const appointmentCreate = (token, appointment) => {
       dispatch(appointmentSuccess({
         user_id: appointment.user_id,
         music_teacher_id: appointment.music_teacher_id,
-        date: appointment.date,
-        time: appointment.time,
+        date: appointment.date
       }))
     })
   }
@@ -35,7 +34,7 @@ const appointmentCreate = (token, appointment) => {
 const appointmentsGet = data => {
   return {
     type: actionTypes.APPOINTMENTS_GET,
-    appointments: data.appointments
+    appointments: data
   }
 }
 
@@ -47,6 +46,7 @@ const appointmentsStart = token => {
       }
     })
     .then(response => {
+      console.log(response);
       dispatch(appointmentsGet(response.data));
     })
     .catch(error => console.log(error));
