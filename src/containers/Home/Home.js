@@ -4,16 +4,23 @@ import Navigation from '../../components/Navigation/Navigation';
 import SearchTeachers from './SearchTeachers/SearchTeachers';
 import MusicTeachers from './MusicTeachers/MusicTeachers';
 import Appointments from './Appointments/Appointments';
+import Sidebar from '../../components/Sidebar/Sidebar';
 import { connect } from 'react-redux';
 import { musicalInstrumentsStart } from '../../store/actions/musicalInstruments';
 import { musicTeachersStart } from '../../store/actions/musicTeachers';
 import { appointmentsStart } from '../../store/actions/appointments';
 import BookAppointment from './BookAppointment/BookAppointment';
+import { runInThisContext } from 'vm';
 
 class Home extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      sidebar: false,
+    }
+    this.showSideBar = this.showSideBar.bind(this);
+    this.hideSideBar = this.hideSideBar.bind(this);
   }
 
   componentDidMount() {
@@ -28,10 +35,27 @@ class Home extends React.Component {
     onAppointmentsStart(auth.token);
   }
 
+  showSideBar() {
+    this.setState({
+      sidebar: true,
+    })
+  }
+
+  hideSideBar() {
+    this.setState({
+      sidebar: false,
+    })
+  }
+
   render(){
     return (
       <div>
-        <Navigation />
+        <Navigation showSideBar={this.showSideBar} />
+        {
+          this.state.sidebar 
+          ? <Sidebar username={this.props.auth.username} hideSideBar={this.hideSideBar}/>
+          : null 
+        }
         <Route path="/" exact component={SearchTeachers}/>
         <Route path="/music_teachers" exact component={MusicTeachers}/>
         <Route path="/music_teachers/book" component={BookAppointment}/>

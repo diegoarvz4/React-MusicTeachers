@@ -72,5 +72,6 @@ body div, body nav, body ul, body form {
   width: 100%;
   margin: 0 auto;
   background-color: white;
+  position: relative;
 }
 /*# sourceMappingURL=App.css.map */
