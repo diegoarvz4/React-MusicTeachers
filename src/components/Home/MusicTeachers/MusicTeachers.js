@@ -6,7 +6,7 @@ class MusicTeachers extends React.Component {
     this.state = {
       years_experience: null,
       name: null,
-      
+      ranking: null,
     }
   }
 
@@ -18,3 +18,5 @@ class MusicTeachers extends React.Component {
     );
   }
 }
+
+export default MusicTeachers;

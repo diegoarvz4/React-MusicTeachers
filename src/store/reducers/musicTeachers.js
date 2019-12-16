@@ -7,9 +7,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.MUSIC_TEACHERS_GET:
-      return {
-        musicTeachers: [...action.musicTeachers]
-      }
+      return [...action.musicTeachers]
     default: 
     return state
   }

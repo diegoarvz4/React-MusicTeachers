@@ -3,6 +3,7 @@ import Navbar from './nav/navbar';
 import SearchTeachers from './Search/SearchTeachers';
 import { connect } from 'react-redux';
 import { musicalInstrumentsStart } from '../../store/actions/musicalInstruments';
+import { musicTeachersStart } from '../../store/actions/musicTeachers';
 
 class Home extends React.Component {
 
@@ -11,7 +12,13 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.onMusicalInstrumentsStart(this.props.auth.token);
+    const { 
+      auth, 
+      onMusicalInstrumentsStart, 
+      onMusicTeachersStart 
+    } = this.props;
+    onMusicalInstrumentsStart(auth.token);
+    onMusicTeachersStart(auth.token);
   }
 
   render(){
@@ -32,7 +39,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onMusicalInstrumentsStart: (token) => dispatch(musicalInstrumentsStart(token))
+    onMusicalInstrumentsStart: (token) => dispatch(musicalInstrumentsStart(token)),
+    onMusicTeachersStart: (token) => dispatch(musicTeachersStart(token)),
   };
 }
 
