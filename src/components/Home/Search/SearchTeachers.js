@@ -1,31 +1,55 @@
 import React from 'react';
+import MusicalInstrument from './musicalInstrument/musicalInstrument';
 import { connect } from 'react-redux';
 
-const SearchTeachers = ({ musicalInstruments }) => {
-  return (
-    <div>
+class SearchTeachers extends React.Component {
+  
+  constructor(props) {
+    super(props)
+    this.state = {
+      kind:''
+    }
+    this.handleInput = this.handleInput.bind(this);
+  }
+
+  handleInput(event) {
+    this.setState({
+      kind: event.target.value
+    })
+  }
+  
+  render() {
+    return (
       <div>
-        Logo Container
+        <div>
+          Logo Container
+        </div>
+        <div>
+          <input placeholder='Search Teachers' value={this.state.kind} onChange={this.handleInput}/>
+        </div>
+        <div>
+          <div>IMG</div>
+          <h1>Search Music Teachers</h1>
+          <p>
+            Lorem
+          </p>
+        </div>
+        <div>
+          {
+            (!this.state.kind || /^\s*$/.test(this.state.kind)) 
+            ? this.props.musicalInstruments.map((inst) => (
+                <MusicalInstrument key={inst.id} name={inst.kind} />
+              ))
+            : this.props.musicalInstruments
+              .filter(inst => inst.kind.toLowerCase() === this.state.kind.toLowerCase())
+              .map((inst) => (
+                <MusicalInstrument key={inst.id} name={inst.kind} />
+              ))
+          }
+        </div>
       </div>
-      <div>
-        <input placeholder='Search Teachers' />
-      </div>
-      <div>
-        <div>IMG</div>
-        <h1>Search Music Teachers</h1>
-        <p>
-          Lorem
-        </p>
-      </div>
-      <div>
-        {
-          musicalInstruments.map((inst) => (
-            <span key={inst.category}>{inst.category}</span>
-          ))
-        }
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = state => {
