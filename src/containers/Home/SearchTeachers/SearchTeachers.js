@@ -56,27 +56,6 @@ class SearchTeachers extends React.Component {
               </Link>
             ))
           }
-          {
-            // (!this.state.kind || /^\s*$/.test(this.state.kind)) 
-            // ? this.props.musicalInstruments.map((inst) => (
-            //     <Link key={inst.id} to={{
-            //       pathname: '/music_teachers',
-            //       search: `?instrument=${inst.kind}`
-            //     }}>
-            //       <MusicalInstrument  name={inst.kind} />
-            //     </Link>
-            //   ))
-            // : this.props.musicalInstruments
-            //   .filter(inst => inst.kind.toLowerCase() === this.state.kind.toLowerCase())
-            //   .map((inst) => (
-            //     <Link key={inst.id} to={{
-            //       pathname: '/music_teachers',
-            //       search: `?instrument=${inst.kind}`
-            //     }}>
-            //       <MusicalInstrument name={inst.kind} />
-            //     </Link>
-            //   ))
-          }
         </div>
       </div>
     );

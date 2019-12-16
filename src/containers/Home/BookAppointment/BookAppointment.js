@@ -7,15 +7,29 @@ class BookAppointment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
       date: '',
       time: '',
-      music_teacher_id: 2,
+      music_teacher_id: 1,
       user_id: this.props.userId
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
   }
+
+  componentDidMount() {
+    const { musicTeachers } = this.props;
+    const query = new URLSearchParams(this.props.location.search);
+    for (let param of query.entries()) {
+        const name = musicTeachers.filter( mT => mT.id === parseInt(param[1]))[0].name;
+        this.setState({
+          [param[0]]: param[1],
+          name: name,
+        })
+    }
+  }
+
 
   handleSubmit(event) {
     event.preventDefault();
@@ -39,6 +53,7 @@ class BookAppointment extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <h1>Book a class with {this.state.name} </h1>
         <label htmlFor="music_teacher_id">Teacher</label>
         <input type="number" name="music_teacher_id" value={this.state.music_teacher_id} onChange={this.handleOnChange}/>
 
@@ -58,6 +73,7 @@ const mapStateToProps = state => {
   return {
     userId: state.authReducer.id,
     token: state.authReducer.token,
+    musicTeachers: state.musTeachers,
   }
 }
 

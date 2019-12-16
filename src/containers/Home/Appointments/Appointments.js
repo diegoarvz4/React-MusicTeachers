@@ -23,8 +23,6 @@ class Appointments extends React.Component {
               musicTeacherId={appo.music_teacher_id} />
           ))
         }
-        <hr />
-        <BookAppointment />
       </div>
     )
   }

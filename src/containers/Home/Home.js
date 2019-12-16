@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { musicalInstrumentsStart } from '../../store/actions/musicalInstruments';
 import { musicTeachersStart } from '../../store/actions/musicTeachers';
 import { appointmentsStart } from '../../store/actions/appointments';
+import BookAppointment from './BookAppointment/BookAppointment';
 
 class Home extends React.Component {
 
@@ -32,8 +33,10 @@ class Home extends React.Component {
       <div>
         <Navigation />
         <Route path="/" exact component={SearchTeachers}/>
-        <Route path="/music_teachers" component={MusicTeachers}/>
-        <Route path="/appointments" component={Appointments}/>
+        <Route path="/music_teachers" exact component={MusicTeachers}/>
+        <Route path="/music_teachers/book" component={BookAppointment}/>
+
+        <Route path="/appointments" exact component={Appointments}/>
       </div>
     );
   }

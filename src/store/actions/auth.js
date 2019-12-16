@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes';
+import { loadingFeedback, loadingFinish, msgFeedbackSet } from './feedback';
 import axios from '../../axios';
 
 const authSuccess = (data) => {
@@ -20,7 +21,7 @@ const authFail = (error) => {
 
 const authStart = (user) => {
   return dispatch => {
-    
+    dispatch(loadingFeedback());
     axios.post('/auth/login', user)
     .then(response => {
       dispatch(authSuccess({
@@ -28,6 +29,12 @@ const authStart = (user) => {
         username: response.data.user_data.username,
         email: response.data.user_data.email,
         id: response.data.user_data.id,
+      }));
+      dispatch(loadingFinish());
+      dispatch(msgFeedbackSet({
+        title: 'Succesfull Logn!',
+        content: 'Try making appointments with teachers!',
+        url: null,
       }))
     })
     .catch(error => {

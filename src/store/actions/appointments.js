@@ -1,5 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
+import { loadingFeedback, loadingFinish, msgFeedbackSet } from './feedback';
 
 const appointmentSuccess = data => {
   return {
@@ -13,8 +14,8 @@ const appointmentSuccess = data => {
 }
 
 const appointmentCreate = (token, appointment) => {
-  console.log(appointment)
   return dispatch => {
+    dispatch(loadingFeedback());
     axios.post('/appointments', appointment , {
       headers: {
         Authorization: token,
@@ -26,7 +27,13 @@ const appointmentCreate = (token, appointment) => {
         user_id: appointment.user_id,
         music_teacher_id: appointment.music_teacher_id,
         date: appointment.date
-      }))
+      }));
+      dispatch(loadingFinish());
+      dispatch(msgFeedbackSet({
+        title: 'New appointment created!',
+        content: 'Checkout your appointments in the dashboard.',
+        url: '/appointments'
+      }));
     })
   }
 }

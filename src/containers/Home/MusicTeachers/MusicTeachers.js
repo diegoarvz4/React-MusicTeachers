@@ -33,6 +33,7 @@ class MusicTeachers extends React.Component {
             name={musTeach.name}
             years_exp={musTeach.years_exp}
             ranking={musTeach.ranking}
+            id={musTeach.id}
           />
         ))
       } else {
