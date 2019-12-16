@@ -10,6 +10,16 @@ class MusicTeachers extends React.Component {
       years_experience: null,
       name: null,
       ranking: null,
+      instrument: null,
+    }
+  }
+
+  componentDidMount() {
+    const query = new URLSearchParams(this.props.location.search);
+    for (let param of query.entries()) {
+        this.setState({
+          [param[0]]: [param[1]]
+        })
     }
   }
 
@@ -32,6 +42,7 @@ class MusicTeachers extends React.Component {
     return (
       <div>
         <span>Filter</span>
+          <h1>{this.state.instrument} Teachers</h1>
         <div>
         { musicTeachers() }
         </div>

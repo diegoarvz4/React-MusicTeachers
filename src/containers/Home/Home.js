@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import SearchTeachers from './SearchTeachers/SearchTeachers';
 import MusicTeachers from './MusicTeachers/MusicTeachers';
@@ -30,9 +31,9 @@ class Home extends React.Component {
     return (
       <div>
         <Navigation />
-        <SearchTeachers />
-        <MusicTeachers />
-        <Appointments />
+        <Route path="/" exact component={SearchTeachers}/>
+        <Route path="/music_teachers" component={MusicTeachers}/>
+        <Route path="/appointments" component={Appointments}/>
       </div>
     );
   }

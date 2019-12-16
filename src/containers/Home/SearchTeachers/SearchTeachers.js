@@ -1,5 +1,6 @@
 import React from 'react';
 import MusicalInstrument from '../../../components/MusicalInstrument/MusicalInstrument';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class SearchTeachers extends React.Component {
@@ -19,6 +20,16 @@ class SearchTeachers extends React.Component {
   }
   
   render() {
+
+    const typesOfMusicaInstruments = () => {
+      if (!this.state.kind || /^\s*$/.test(this.state.kind)) {
+        return this.props.musicalInstruments;        
+      } else {
+        return this.props.musicalInstruments
+          .filter(inst => inst.kind.toLowerCase() === this.state.kind.toLowerCase());
+      }
+    }
+
     return (
       <div>
         <div>
@@ -36,15 +47,35 @@ class SearchTeachers extends React.Component {
         </div>
         <div>
           {
-            (!this.state.kind || /^\s*$/.test(this.state.kind)) 
-            ? this.props.musicalInstruments.map((inst) => (
-                <MusicalInstrument key={inst.id} name={inst.kind} />
-              ))
-            : this.props.musicalInstruments
-              .filter(inst => inst.kind.toLowerCase() === this.state.kind.toLowerCase())
-              .map((inst) => (
-                <MusicalInstrument key={inst.id} name={inst.kind} />
-              ))
+            typesOfMusicaInstruments().map((inst) => (
+              <Link key={inst.id} to={{
+                pathname: '/music_teachers',
+                search: `?instrument=${inst.kind}`
+              }}>
+                <MusicalInstrument  name={inst.kind} />
+              </Link>
+            ))
+          }
+          {
+            // (!this.state.kind || /^\s*$/.test(this.state.kind)) 
+            // ? this.props.musicalInstruments.map((inst) => (
+            //     <Link key={inst.id} to={{
+            //       pathname: '/music_teachers',
+            //       search: `?instrument=${inst.kind}`
+            //     }}>
+            //       <MusicalInstrument  name={inst.kind} />
+            //     </Link>
+            //   ))
+            // : this.props.musicalInstruments
+            //   .filter(inst => inst.kind.toLowerCase() === this.state.kind.toLowerCase())
+            //   .map((inst) => (
+            //     <Link key={inst.id} to={{
+            //       pathname: '/music_teachers',
+            //       search: `?instrument=${inst.kind}`
+            //     }}>
+            //       <MusicalInstrument name={inst.kind} />
+            //     </Link>
+            //   ))
           }
         </div>
       </div>
