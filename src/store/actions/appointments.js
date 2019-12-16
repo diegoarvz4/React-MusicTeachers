@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
 import { loadingFeedback, loadingFinish, msgFeedbackSet } from './feedback';
+import { act } from 'react-dom/test-utils';
 
 const appointmentSuccess = data => {
   return {
@@ -60,4 +61,10 @@ const appointmentsStart = token => {
   }
 }
 
-export { appointmentsStart, appointmentCreate };
+const appointmentsClear = () => {
+  return {
+    type: actionTypes.APPOINTMENTS_CLEAR,
+  }
+}
+
+export { appointmentsStart, appointmentCreate, appointmentsClear };

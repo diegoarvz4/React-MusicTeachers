@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 import MusicTeacher from '../../../components/MusicTeacher/MusicTeacher';
 import { connect } from 'react-redux';
 
@@ -42,8 +43,8 @@ class MusicTeachers extends React.Component {
     }
     return (
       <div>
+        <ThemeBar section={this.state.instrument + " Music Teachers"}/>
         <span>Filter</span>
-          <h1>{this.state.instrument} Teachers</h1>
         <div>
         { musicTeachers() }
         </div>

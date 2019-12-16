@@ -8,6 +8,8 @@ export default (state = initialState, action) => {
       return [...state, action.appointment];
     case actionTypes.APPOINTMENTS_GET:
       return [...action.appointments];
+    case actionTypes.APPOINTMENTS_CLEAR:
+      return []
     default:
       return state;
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import MusicalInstrument from '../../../components/MusicalInstrument/MusicalInstrument';
+import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -35,6 +36,7 @@ class SearchTeachers extends React.Component {
         <div>
           Logo Container
         </div>
+        <ThemeBar section={"Search Music Teachers"}/>
         <div>
           <input placeholder='Search Teachers' value={this.state.kind} onChange={this.handleInput}/>
         </div>

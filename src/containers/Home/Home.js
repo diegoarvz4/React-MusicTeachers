@@ -9,8 +9,8 @@ import { connect } from 'react-redux';
 import { musicalInstrumentsStart } from '../../store/actions/musicalInstruments';
 import { musicTeachersStart } from '../../store/actions/musicTeachers';
 import { appointmentsStart } from '../../store/actions/appointments';
+import { loggingOut } from '../../store/actions/auth';
 import BookAppointment from './BookAppointment/BookAppointment';
-import { runInThisContext } from 'vm';
 
 class Home extends React.Component {
 
@@ -53,7 +53,7 @@ class Home extends React.Component {
         <Navigation showSideBar={this.showSideBar} />
         {
           this.state.sidebar 
-          ? <Sidebar username={this.props.auth.username} hideSideBar={this.hideSideBar}/>
+          ? <Sidebar username={this.props.auth.username} hideSideBar={this.hideSideBar} logout={this.props.onLogout}/>
           : null 
         }
         <Route path="/" exact component={SearchTeachers}/>
@@ -77,6 +77,7 @@ const mapDispatchToProps = dispatch => {
     onMusicalInstrumentsStart: (token) => dispatch(musicalInstrumentsStart(token)),
     onMusicTeachersStart: (token) => dispatch(musicTeachersStart(token)),
     onAppointmentsStart: (token) => dispatch(appointmentsStart(token)),
+    onLogout: () => dispatch(loggingOut()),
   };
 }
 
