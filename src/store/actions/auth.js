@@ -7,6 +7,7 @@ const authSuccess = (data) => {
     token: data.auth_token,
     username: data.username,
     email: data.email,
+    id: data.id,
   }
 }
 
@@ -19,12 +20,14 @@ const authFail = (error) => {
 
 const authStart = (user) => {
   return dispatch => {
+    
     axios.post('/auth/login', user)
     .then(response => {
       dispatch(authSuccess({
         auth_token: response.data.auth_token,
         username: response.data.user_data.username,
         email: response.data.user_data.email,
+        id: response.data.user_data.id,
       }))
     })
     .catch(error => {

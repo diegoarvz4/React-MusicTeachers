@@ -11,6 +11,7 @@ export default (state = initialState, action) => {
         token: action.token,
         username: action.username,
         email: action.email,
+        id: action.id,
       }
     default:
       return state
