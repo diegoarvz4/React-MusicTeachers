@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from './nav/navbar';
-import SearchTeachers from './Search/SearchTeachers';
+import Navigation from '../../components/Navigation/Navigation';
+import SearchTeachers from './SearchTeachers/SearchTeachers';
 import MusicTeachers from './MusicTeachers/MusicTeachers';
 import Appointments from './Appointments/Appointments';
 import { connect } from 'react-redux';
@@ -29,7 +29,7 @@ class Home extends React.Component {
   render(){
     return (
       <div>
-        <Navbar />
+        <Navigation />
         <SearchTeachers />
         <MusicTeachers />
         <Appointments />

@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from './Login/loginForm';
-import Signup from './Signup/signUpForm';
-import WelcomeForm from './welcomeForm';
+import Login from './Login/Login';
+import Signup from './Signup/Signup';
+import WelcomeForm from '../../components/WelcomeForm/WelcomeForm';
 class Welcome extends React.Component {
 
   constructor() {

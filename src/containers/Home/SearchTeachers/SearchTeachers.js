@@ -1,5 +1,5 @@
 import React from 'react';
-import MusicalInstrument from './musicalInstrument/musicalInstrument';
+import MusicalInstrument from '../../../components/MusicalInstrument/MusicalInstrument';
 import { connect } from 'react-redux';
 
 class SearchTeachers extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { appointmentCreate } from '../../../../store/actions/appointments';
+import { appointmentCreate } from '../../../store/actions/appointments';
 
 
 class BookAppointment extends React.Component {

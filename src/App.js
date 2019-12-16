@@ -1,11 +1,10 @@
 import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-import Home from './components/Home/Home';
-import Welcome from './components/Welcome/Welcome';
+import Home from './containers/Home/Home';
+import Welcome from './containers/Welcome/Welcome';
 
-function App({ authentication, isAuthenticated }) {
-  console.log( isAuthenticated);
+function App({ isAuthenticated }) {
   return (
     <div className="App">
       {isAuthenticated 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Appointment from './Appointment/Appointment';
-import BookAppointment from './BookAppointment/BookAppointment';
+import Appointment from '../../../components/Appointment/Appointment';
+import BookAppointment from '../BookAppointment/BookAppointment';
 
 class Appointments extends React.Component {
   

@@ -1,5 +1,5 @@
 import React from 'react';
-import MusicTeacher from './MusicTeacher/MusicTeacher';
+import MusicTeacher from '../../../components/MusicTeacher/MusicTeacher';
 import { connect } from 'react-redux';
 
 class MusicTeachers extends React.Component {
