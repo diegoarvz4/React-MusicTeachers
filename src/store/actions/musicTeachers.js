@@ -16,6 +16,7 @@ export const musicTeachersStart = (auth_token) => {
       },
     })
     .then(response => {
+      console.log(response);
       dispatch(musicTeachersGet(response.data));
     })
     .catch(error => console.log(error))

@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default ({ id, name, ranking, years_exp }) => {
+export default ({ id, name, ranking, years_exp, musicGenres }) => {
   return (
     <div>
       <h1>{ name }</h1>
       <span>{ ranking }</span>
       <span>{ years_exp }</span>
+      <div>
+        {
+          musicGenres.map( genre => (
+            <span key={genre.id}>{genre.category}</span>
+          ))
+        }
+      </div>
       <Link 
         to={{
           pathname: '/music_teachers/book',

@@ -1,16 +1,20 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+
 import Navigation from '../../components/Navigation/Navigation';
 import SearchTeachers from './SearchTeachers/SearchTeachers';
 import MusicTeachers from './MusicTeachers/MusicTeachers';
 import Appointments from './Appointments/Appointments';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import BookAppointment from './BookAppointment/BookAppointment';
+
+
 import { connect } from 'react-redux';
 import { musicalInstrumentsStart } from '../../store/actions/musicalInstruments';
 import { musicTeachersStart } from '../../store/actions/musicTeachers';
 import { appointmentsStart } from '../../store/actions/appointments';
 import { loggingOut } from '../../store/actions/auth';
-import BookAppointment from './BookAppointment/BookAppointment';
+import { musicGenresStart } from '../../store/actions/musicGenres';
 
 class Home extends React.Component {
 
@@ -28,11 +32,13 @@ class Home extends React.Component {
       auth, 
       onMusicalInstrumentsStart, 
       onMusicTeachersStart,
-      onAppointmentsStart
+      onAppointmentsStart,
+      onMusicGenresStart,
     } = this.props;
     onMusicalInstrumentsStart(auth.token);
     onMusicTeachersStart(auth.token);
     onAppointmentsStart(auth.token);
+    onMusicGenresStart(auth.token)
   }
 
   showSideBar() {
@@ -77,6 +83,7 @@ const mapDispatchToProps = dispatch => {
     onMusicalInstrumentsStart: (token) => dispatch(musicalInstrumentsStart(token)),
     onMusicTeachersStart: (token) => dispatch(musicTeachersStart(token)),
     onAppointmentsStart: (token) => dispatch(appointmentsStart(token)),
+    onMusicGenresStart: (token) => dispatch(musicGenresStart(token)),
     onLogout: () => dispatch(loggingOut()),
   };
 }
