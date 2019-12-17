@@ -12,6 +12,7 @@ export default (props) => {
   return (
     <div className="sidebar">
       <h1>{props.username}</h1>
+      <span onClick={props.hideSideBar}>Close</span>
       <hr />
       <h2 onClick={props.hideSideBar}><Link to={{
         pathname: '/appointments'

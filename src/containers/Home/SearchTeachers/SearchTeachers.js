@@ -27,7 +27,8 @@ class SearchTeachers extends React.Component {
         return this.props.musicalInstruments;        
       } else {
         return this.props.musicalInstruments
-          .filter(inst => inst.kind.toLowerCase() === this.state.kind.toLowerCase());
+          .filter(inst => inst.kind.toLowerCase().includes(this.state.kind.toLowerCase())
+          );
       }
     }
 
@@ -38,7 +39,7 @@ class SearchTeachers extends React.Component {
         </div>
         <ThemeBar section={"Search Music Teachers"}/>
         <div>
-          <input placeholder='Search Teachers' value={this.state.kind} onChange={this.handleInput}/>
+          <input placeholder='Type Instrument' value={this.state.kind} onChange={this.handleInput}/>
         </div>
         <div>
           <div>IMG</div>

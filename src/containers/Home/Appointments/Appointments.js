@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Appointment from '../../../components/Appointment/Appointment';
+import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 
 class Appointments extends React.Component {
   
@@ -14,6 +15,7 @@ class Appointments extends React.Component {
   render() {
     return (
       <div>
+        <ThemeBar section={"My Class Appointments"} />
         {
           this.props.appointments.map(appo => (
             <Appointment 

@@ -33,13 +33,19 @@ const authStart = (user) => {
       }));
       dispatch(loadingFinish());
       dispatch(msgFeedbackSet({
-        title: 'Succesfull Logn!',
-        content: 'Try making appointments with teachers!',
+        title: 'Successful Login!',
+        content: 'Time to make appointments with the best music teachers!',
         url: null,
       }))
     })
     .catch(error => {
       dispatch(authFail(error))
+      dispatch(loadingFinish());
+      dispatch(msgFeedbackSet({
+         title: 'An Error Ocurred!',
+         content: 'Credentials are not valid.',
+         url: '/',
+      }))
     })
   }
 }
