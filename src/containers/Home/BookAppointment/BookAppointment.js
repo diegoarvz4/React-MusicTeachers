@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { appointmentCreate } from '../../../store/actions/appointments';
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
+import './BookAppointment.css';
 
 class BookAppointment extends React.Component {
   constructor(props) {
@@ -53,15 +54,22 @@ class BookAppointment extends React.Component {
     return (
       <div>
         <ThemeBar section={`Book a class with ${this.state.name}`}/>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="date">Date</label>
-          <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange}/>
+        <div className="BookAppointmentContainer">
+          <form onSubmit={this.handleSubmit}>
+            <div className="DateAppointment">
+              <label htmlFor="date">Date</label>
+              <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange}/>
+            </div>
 
-          <label htmlFor="time">Time</label>
-          <input type="time" name="time" onChange={this.handleOnChange}/>
-
-          <button type="submit">Book</button>
-        </form>
+            <div className="TimeAppointment">
+              <label htmlFor="time">Time</label>
+              <input type="time" name="time" onChange={this.handleOnChange}/>
+            </div>
+            <div className="Submit">
+              <button type="submit">Book</button>
+            </div>
+          </form>
+        </div>
       </div>
     ); 
   }

@@ -1,0 +1,52 @@
+.BookAppointmentContainer{
+  padding: 20px;
+  .DateAppointment{
+    font-size: 20px;
+    font-weight: bold;
+    label{
+      display: block;
+      margin-bottom: 10px;
+    }
+    input{
+      width: 100%;
+      padding: 20px;
+      border: 1px solid rgb(223, 223, 223);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+  }
+
+  .TimeAppointment {
+    font-size: 20px;
+    font-weight: bold;
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 20px;
+      border: 1px solid rgb(223, 223, 223);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+  }
+
+  .Submit{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    button{
+      padding: 20px;
+      width: 180px;
+      border-radius: 10px;
+      border: none;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+
+}
