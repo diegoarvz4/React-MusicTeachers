@@ -1,6 +1,30 @@
+nav {
+  width: 100%;
+}
+
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+nav ul li {
+  padding: 5px;
+}
+
+nav ul li span {
+  font-weight: bold;
+}
+
+nav ul img {
+  width: 30px;
 }
 /*# sourceMappingURL=Navigation.css.map */
