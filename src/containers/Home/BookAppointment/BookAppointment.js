@@ -54,9 +54,6 @@ class BookAppointment extends React.Component {
       <div>
         <ThemeBar section={`Book a class with ${this.state.name}`}/>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="music_teacher_id">Teacher</label>
-          <input type="number" name="music_teacher_id" value={this.state.music_teacher_id} onChange={this.handleOnChange}/>
-
           <label htmlFor="date">Date</label>
           <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange}/>
 
