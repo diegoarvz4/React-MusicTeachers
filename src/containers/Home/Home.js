@@ -8,7 +8,6 @@ import Appointments from './Appointments/Appointments';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import BookAppointment from './BookAppointment/BookAppointment';
 
-
 import { connect } from 'react-redux';
 import { musicalInstrumentsStart } from '../../store/actions/musicalInstruments';
 import { musicTeachersStart } from '../../store/actions/musicTeachers';
