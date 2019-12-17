@@ -2,6 +2,7 @@ import React from 'react';
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import WelcomeForm from '../../components/WelcomeForm/WelcomeForm';
+import './Welcome.css';
 class Welcome extends React.Component {
 
   constructor() {
@@ -32,14 +33,16 @@ class Welcome extends React.Component {
   render() {
     const { login, signup } = this.state
     return (
-      <div>
-        <h1>Musiclass Logo</h1>
-        <h2>Welcome</h2>
+      <div className="WelcomeContainer">
+        <h1 className="LogoTitle">musiclass</h1>
+        
         { login? <Login showSignUp={this.showSignUp}/> : null }
         { signup ? <Signup showLogin={this.showLogin}/> : null }
         { login || signup 
           ? null 
-          : <WelcomeForm showLogin={this.showLogin} showSignUp={this.showSignUp} />
+          : (<div className="WelcomeWrapper"><h2>WELCOME</h2>
+            <WelcomeForm showLogin={this.showLogin} showSignUp={this.showSignUp}/>
+            </div>) 
         }
        </div>
     );

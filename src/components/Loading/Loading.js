@@ -4,7 +4,7 @@ import './Loading.css';
 export default () => {
   return (
     <div className='loadingContainer'>
-      Loading...
+      <div className="loader">Loading...</div>
     </div>
   )
 }

@@ -55,13 +55,11 @@ table {
 body {
   font-family: 'Montserrat', sans-serif;
 	background-color: rgba(211, 211, 211, 0.534);
-	div, nav, ul, form {
-		border: 1px solid black;
-	}
 }
 
 .App {
-  max-width: 570px;
+	max-width: 570px;
+	min-height: 100vh;
   width: 100%;
   margin: 0 auto;
 	background-color: white;

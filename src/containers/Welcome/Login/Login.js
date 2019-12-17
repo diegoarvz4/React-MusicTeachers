@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { authStart } from '../../../store/actions/auth';
+import './Login.css'
 
 class LoginForm extends React.Component {
   
@@ -27,19 +28,23 @@ class LoginForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={this.handleLogin}>
-        <h1>Log in</h1>
-        <label htmlFor='email'>Email</label>
-        <input type='email' value={this.state.email} onChange={this.handleInput} name='email'/>
-
-        
-        <label htmlFor='password'>Password</label>
-        <input type='password' value={this.state.password} onChange={this.handleInput} name='password'/>
-
-        <button type='submit'>Login</button>
+      <div className="LoginFormContainer">
+        <h1 className="LoginFormContainer-title">log in</h1>
+        <form  onSubmit={this.handleLogin}>
+          <div className="fieldContainer">
+            <label htmlFor='email'>Email</label>
+            <input type='email' value={this.state.email} onChange={this.handleInput} name='email'/>
+          </div>
+          
+          <div className="fieldContainer">
+            <label htmlFor='password'>Password</label>
+            <input type='password' value={this.state.password} onChange={this.handleInput} name='password'/>
+          </div>
+          <button type='submit'>Login</button>
+        </form>
         <hr />
-        <span onClick={this.props.showSignUp}>SignUp</span>
-      </form>
+        <span onClick={this.props.showSignUp}>Or SignUp</span>
+      </div>
     );
   }
 }

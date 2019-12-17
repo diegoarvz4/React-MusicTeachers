@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import signUpStart from  '../../../store/actions/signup';
+import './Signup.css';
 
 class SignUpForm extends React.Component {
   
@@ -29,26 +30,34 @@ class SignUpForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSignUp}>
-        <h1>Sign Up</h1>
-        <label htmlFor='username'>Username</label>
-        <input type='text' value={this.state.username} onChange={this.handleInput} name='username'/>
+      <div className="SignupFormContainer">
+        <h1 className="SignupFormContainer-title">Sign Up</h1>
+        <form onSubmit={this.handleSignUp}>
+          <div className="fieldContainer">
+            <label htmlFor='username'>Username</label>
+            <input type='text' value={this.state.username} onChange={this.handleInput} name='username'/>
+          </div>
+          
+          <div className="fieldContainer">
+            <label htmlFor='email'>Email</label>
+            <input type='email' value={this.state.email} onChange={this.handleInput} name='email'/>
+          </div>
+          
+          <div className="fieldContainer">
+            <label htmlFor='password'>Password</label>
+            <input type='password' value={this.state.password} onChange={this.handleInput} name='password'/>
+          </div>
+          
+          <div className="fieldContainer">
+            <label htmlFor='password_confirmation'>Password Confirmation </label>
+            <input type='password' value={this.state.password_confirmation} onChange={this.handleInput} name='password_confirmation'/>
+          </div>
 
-        <label htmlFor='email'>Email</label>
-        <input type='email' value={this.state.email} onChange={this.handleInput} name='email'/>
-
-        
-        <label htmlFor='password'>Password</label>
-        <input type='password' value={this.state.password} onChange={this.handleInput} name='password'/>
-
-        
-        <label htmlFor='password_confirmation'>Password Confirmation </label>
-        <input type='password' value={this.state.password_confirmation} onChange={this.handleInput} name='password_confirmation'/>
-
-        <button type='submit'>Sign up</button>
+          <button type='submit'>Sign up</button>
+        </form>
         <hr />
         <span onClick={this.props.showLogin}>Login</span>
-      </form>
+      </div>
     );
   }
 }
