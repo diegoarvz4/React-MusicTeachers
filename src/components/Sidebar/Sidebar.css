@@ -7,6 +7,7 @@
   background-color: #f7f7f7;
   top: 0;
   bottom: 0;
+  z-index: 100;
 }
 
 .sidebar-head {
@@ -38,6 +39,10 @@
 .sidebar-link img {
   width: 30px;
   margin-right: 10px;
+}
+
+.sidebar-link:hover {
+  cursor: pointer;
 }
 
 .sidebar-user {

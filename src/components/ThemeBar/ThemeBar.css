@@ -20,6 +20,10 @@
   margin-right: 10px;
 }
 
+.themeBarContainer-head img:hover {
+  cursor: pointer;
+}
+
 .themeBarContainer-head span {
   font-size: 20px;
 }

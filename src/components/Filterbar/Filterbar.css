@@ -1,10 +1,76 @@
 .filterBar {
   position: absolute;
-  width: 50%;
+  padding: 10px;
+  width: 70%;
   height: 100%;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: white;
+  background-color: #b8b6b6;
+  z-index: 100;
+}
+
+.filterBar-CloseContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.filterBar-CloseContainer img {
+  width: 30px;
+}
+
+.filterBar-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.filterBar-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.filterBar-form .fieldContainer {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filterBar-form .fieldContainer input {
+  border: none;
+  padding: 8px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.filterBar-form .fieldContainer-range {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filterBar-form .fieldContainer-range input {
+  margin-right: 10px;
+}
+
+.filterBar-form .fieldContainer-range label {
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=Filterbar.css.map */

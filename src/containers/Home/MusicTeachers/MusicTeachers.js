@@ -3,6 +3,8 @@ import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 import MusicTeacher from '../../../components/MusicTeacher/MusicTeacher';
 import { connect } from 'react-redux';
 import Filterbar from '../../../components/Filterbar/Filterbar';
+import './MusicTeachers.css';
+import optionsImg from './options.svg';
 
 class MusicTeachers extends React.Component {
 
@@ -132,9 +134,9 @@ class MusicTeachers extends React.Component {
       }
     }
     return (
-      <div>
+      <div className="MusicTeachersContainer">
         <ThemeBar section={this.state.instrument + " Music Teachers"}/>
-        <span onClick={this.showFilterBar}>Filter</span>
+        <img src={optionsImg} className="MusicTeachers-filter" onClick={this.showFilterBar} />
         {
           this.state.filterBar
           ? <Filterbar 

@@ -27,4 +27,8 @@ nav ul li span {
 nav ul img {
   width: 30px;
 }
+
+nav ul img:hover {
+  cursor: pointer;
+}
 /*# sourceMappingURL=Navigation.css.map */

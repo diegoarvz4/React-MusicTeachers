@@ -11,6 +11,9 @@
     img {
       width: 30px;
       margin-right: 10px;
+      &:hover{
+        cursor: pointer;
+      }
     }
     span {
       font-size: 20px;

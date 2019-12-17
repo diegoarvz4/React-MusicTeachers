@@ -7,7 +7,7 @@
   background-color: rgb(247, 247, 247);
   top: 0;
   bottom: 0;
-
+  z-index: 100;
   &-head{
     display: flex;
     justify-content: space-between;
@@ -26,6 +26,9 @@
     img{
       width: 30px;
       margin-right: 10px;
+    }
+    &:hover{
+      cursor: pointer;
     }
   }
 
