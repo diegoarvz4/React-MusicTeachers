@@ -1,7 +1,6 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
 import { loadingFeedback, loadingFinish, msgFeedbackSet } from './feedback';
-import { act } from 'react-dom/test-utils';
 
 const appointmentSuccess = data => {
   return {
@@ -22,19 +21,27 @@ const appointmentCreate = (token, appointment) => {
         Authorization: token,
       },
     })
-    .then(response => {
-      console.log(response);
+    .then(() => {
       dispatch(appointmentSuccess({
         user_id: appointment.user_id,
         music_teacher_id: appointment.music_teacher_id,
         date: appointment.date
       }));
+      dispatch(appointmentsStart(token))
       dispatch(loadingFinish());
       dispatch(msgFeedbackSet({
         title: 'New appointment created!',
         content: 'Checkout your appointments in the dashboard.',
         url: '/appointments'
       }));
+    })
+    .catch(() => {
+      dispatch(loadingFinish());
+      dispatch(msgFeedbackSet({
+         title: 'An Error Ocurred!',
+         content: 'Invalid submission form!',
+         url: null,
+      }))
     })
   }
 }
@@ -54,10 +61,8 @@ const appointmentsStart = token => {
       }
     })
     .then(response => {
-      console.log(response);
       dispatch(appointmentsGet(response.data));
     })
-    .catch(error => console.log(error));
   }
 }
 

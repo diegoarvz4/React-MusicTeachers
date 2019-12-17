@@ -4,25 +4,40 @@ import Appointment from '../../../components/Appointment/Appointment';
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 
 class Appointments extends React.Component {
-  
+
   constructor(props) {
     super(props);
-    this.state = {
-      filter: '',
+    this.getTeacherName = this.getTeacherName.bind(this);
+  }
+
+  getTeacherName(id) {
+    const { musicTeachers } = this.props;
+    for(let i=0; i < musicTeachers.length; i+=1) {
+      if( musicTeachers[i].id === id) {
+        return musicTeachers[i].name
+      }
     }
   }
-  
+   
   render() {
     return (
       <div>
         <ThemeBar section={"My Class Appointments"} />
         {
-          this.props.appointments.map(appo => (
-            <Appointment 
-              key={appo.id}
-              date={appo.date}
-              musicTeacherId={appo.music_teacher_id} />
-          ))
+          this.props.appointments.map((appo,idx) => 
+            {
+              const music_teacher_name = this.getTeacherName(appo.music_teacher_id);
+              return (
+                <div key={'Appo'+idx}>
+                  <Appointment 
+                    date={appo.date}
+                    musicTeacherId={appo.music_teacher_id}
+                    musicTeacherName={music_teacher_name}
+                  />
+                </div>
+              )
+            }
+          )
         }
       </div>
     )
@@ -32,6 +47,7 @@ class Appointments extends React.Component {
 const mapStateToProps = state => {
   return {
     appointments: state.appointments,
+    musicTeachers: state.musTeachers
   }
 }
 
