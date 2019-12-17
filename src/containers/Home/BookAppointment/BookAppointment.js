@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { appointmentCreate } from '../../../store/actions/appointments';
-
+import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 
 class BookAppointment extends React.Component {
   constructor(props) {
@@ -39,7 +39,6 @@ class BookAppointment extends React.Component {
       user_id,
       music_teacher_id
     }
-    console.log(appointment)
     this.props.onAppointmentCreate(this.props.token, appointment);
     
   }
@@ -52,19 +51,21 @@ class BookAppointment extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h1>Book a class with {this.state.name} </h1>
-        <label htmlFor="music_teacher_id">Teacher</label>
-        <input type="number" name="music_teacher_id" value={this.state.music_teacher_id} onChange={this.handleOnChange}/>
+      <div>
+        <ThemeBar section={`Book a class with ${this.state.name}`}/>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="music_teacher_id">Teacher</label>
+          <input type="number" name="music_teacher_id" value={this.state.music_teacher_id} onChange={this.handleOnChange}/>
 
-        <label htmlFor="date">Date</label>
-        <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange}/>
+          <label htmlFor="date">Date</label>
+          <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange}/>
 
-        <label htmlFor="time">Time</label>
-        <input type="time" name="time" onChange={this.handleOnChange}/>
+          <label htmlFor="time">Time</label>
+          <input type="time" name="time" onChange={this.handleOnChange}/>
 
-        <button type="submit">Book</button>
-      </form>
+          <button type="submit">Book</button>
+        </form>
+      </div>
     ); 
   }
 }

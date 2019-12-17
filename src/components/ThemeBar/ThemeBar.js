@@ -1,7 +1,18 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
-export default (props) => (
-  <div>
-    <span>Back</span> <span>{props.section}</span>
-  </div>
-)
+const ThemeBar = (props) => {
+  
+  const goBack = () => {
+    props.history.goBack();
+  }
+
+  return (
+    <div>
+      { console.log(props) }
+      <span onClick={goBack}>Back</span> <span>{props.section}</span>
+    </div>
+  )
+}
+
+export default withRouter(ThemeBar);
