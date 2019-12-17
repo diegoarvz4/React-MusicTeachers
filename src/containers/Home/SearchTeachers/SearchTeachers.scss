@@ -10,3 +10,12 @@
     border-radius: 40px;
   }
 }
+
+.MusicalInstrumentsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}

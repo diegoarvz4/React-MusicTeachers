@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './MusicalInstrument.css';
 
 export default (props) => {
   return (
-    <div>
+    <div className="MusicalInstrument">
       { props.name }
     </div>
   );
