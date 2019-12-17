@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACG,AAAD,+BAAQ,CAAC;EACP,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,KAAK;EACV,KAAK,EAAE,GAAG;EACV,IAAI,EAAE,GAAG;EACT,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,gBAAgB;EAC3B,MAAM,EAAE,cAAc;EACtB,aAAa,EAAE,IAAI;CACpB",
+    "sources": [
+        "SearchTeachers.scss"
+    ],
+    "names": [],
+    "file": "SearchTeachers.css"
+}

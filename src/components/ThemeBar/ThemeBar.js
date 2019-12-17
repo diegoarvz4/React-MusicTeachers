@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+import './ThemeBar.css';
+import backArrow from './arrow_back.svg';
 
 const ThemeBar = (props) => {
   
@@ -8,9 +10,10 @@ const ThemeBar = (props) => {
   }
 
   return (
-    <div>
-      { console.log(props) }
-      <span onClick={goBack}>Back</span> <span>{props.section}</span>
+    <div className="themeBarContainer">
+      <div className="themeBarContainer-head">
+        <img src={backArrow} onClick={goBack} /> <span>{props.section}</span>
+      </div> 
     </div>
   )
 }

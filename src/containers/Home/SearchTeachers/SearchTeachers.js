@@ -3,6 +3,7 @@ import MusicalInstrument from '../../../components/MusicalInstrument/MusicalInst
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './SearchTeachers.css';
 
 class SearchTeachers extends React.Component {
   
@@ -33,14 +34,9 @@ class SearchTeachers extends React.Component {
     }
 
     return (
-      <div>
-        <div>
-          Logo Container
-        </div>
-        <ThemeBar section={"Search Music Teachers"}/>
-        <div>
-          <input placeholder='Type Instrument' value={this.state.kind} onChange={this.handleInput}/>
-        </div>
+      <div className="SearchTeachersContainer">
+        <ThemeBar section={"Music Teachers"}/>
+        <input className="SearchTeachersContainer-search" placeholder='Type Instrument' value={this.state.kind} onChange={this.handleInput}/>
         <div>
           <div>IMG</div>
           <h1>Search Music Teachers</h1>

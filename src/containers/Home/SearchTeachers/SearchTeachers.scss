@@ -1,0 +1,12 @@
+.SearchTeachersContainer{
+  &-search {
+    position: relative;
+    top: -25px;
+    width: 70%;
+    left: 50%;
+    padding: 15px;
+    transform: translateX(-50%);
+    border: 1px solid gray;
+    border-radius: 40px;
+  }
+}

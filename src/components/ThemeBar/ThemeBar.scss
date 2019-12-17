@@ -1,0 +1,19 @@
+.themeBarContainer{
+  padding: 10px;
+  padding-bottom: 40px;
+  background-color: gray;
+  &-head  {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    
+    img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    span {
+      font-size: 20px;
+    }
+  }
+}
