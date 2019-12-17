@@ -5,8 +5,8 @@ export default ({ id, name, ranking, years_exp, musicGenres }) => {
   return (
     <div>
       <h1>{ name }</h1>
-      <span>{ ranking }</span>
-      <span>{ years_exp }</span>
+      <span>Ranking => { ranking }</span>
+      <span>Years Exp => { years_exp }</span>
       <div>
         {
           musicGenres.map( genre => (

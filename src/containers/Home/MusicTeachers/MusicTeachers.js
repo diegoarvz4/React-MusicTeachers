@@ -9,9 +9,9 @@ class MusicTeachers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      years_experience: null,
-      name: null,
-      ranking: null,
+      years_exp: 5,
+      name: '',
+      ranking: 2.5,
       instrument: null,
       genres: null,
       filterBar: false,
@@ -19,6 +19,7 @@ class MusicTeachers extends React.Component {
     this.showFilterBar = this.showFilterBar.bind(this);
     this.hideFilterBar = this.hideFilterBar.bind(this);
     this.handleGenre = this.handleGenre.bind(this); 
+    this.handleInput = this.handleInput.bind(this);
   }
 
   componentDidMount() {
@@ -47,12 +48,19 @@ class MusicTeachers extends React.Component {
   }
 
   hideFilterBar() {
+    this.setState({
+      filterBar: false,
+    })
+  }
 
+  handleInput(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    })
   }
 
   handleGenre(property, value) {
-    console.log(property, value);
-    this.setState((prevState, props) => {
+    this.setState((prevState) => {
       return {genres: {...prevState.genres, [property]: value}};
     })
   }
@@ -64,13 +72,12 @@ class MusicTeachers extends React.Component {
         let musicTeachersFiltered = []
         let musicTeachersInstrumentFiltered = []
         const { musicTeachers } = this.props;
-        console.log('********');
+        
+        // Filter by instrument
         for(let i=0; i < musicTeachers.length; i+=1) {
           const musicTeacher = musicTeachers[i];
           const instruments = musicTeacher.musical_instruments;
           for (let j=0; j < instruments.length; j+=1) {
-            console.log(this.state.instrument)
-            console.log(instruments[j].kind)
             if (instruments[j].kind === this.state.instrument
                 && !musicTeachersFiltered.includes(musicTeacher)){
                   musicTeachersInstrumentFiltered.push(musicTeacher)
@@ -78,7 +85,24 @@ class MusicTeachers extends React.Component {
           }
         }
 
+        // Filter by name
+        musicTeachersInstrumentFiltered = 
+          musicTeachersInstrumentFiltered
+          .filter( mT => mT.name.toLowerCase()
+            .includes(this.state.name.toLowerCase().trim())
+          )
+        // Filter by ranking
+        musicTeachersInstrumentFiltered =
+          musicTeachersInstrumentFiltered
+          .filter( mT => parseFloat(mT.ranking) >= parseFloat(this.state.ranking)
+          )
+        // Filter by Years of experience
+        musicTeachersInstrumentFiltered =
+          musicTeachersInstrumentFiltered
+          .filter( mT => mT.years_exp >= this.state.years_exp
+          )
 
+        // Filter by Genres
         for(let i = 0; i < musicTeachersInstrumentFiltered.length; i += 1) {
           const musicTeacher = musicTeachersInstrumentFiltered[i];
           const genres = musicTeacher.music_genres;
@@ -113,7 +137,14 @@ class MusicTeachers extends React.Component {
         <span onClick={this.showFilterBar}>Filter</span>
         {
           this.state.filterBar
-          ? <Filterbar genres={this.state.genres} handleGenre={this.handleGenre} />
+          ? <Filterbar 
+              genres={this.state.genres}
+              years_exp={this.state.years_exp}
+              ranking={this.state.ranking}
+              name={this.state.name}
+              handleGenre={this.handleGenre}
+              handleInput={this.handleInput}
+              hideFilterBar={this.hideFilterBar} />
           : null
         }
         <div>

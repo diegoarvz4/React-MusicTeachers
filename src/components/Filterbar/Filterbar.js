@@ -5,15 +5,30 @@ class Filterbar extends React.Component {
   constructor() {
     super()
     this.state = {
+      years_exp: 60,
+      ranking: 5.0,
+      name: '',
       genres: {},
     }
     this.onHandleGenre = this.onHandleGenre.bind(this);
+    this.handeInput = this.handeInput.bind(this);
   }
 
    componentDidMount() {
+    const { years_exp, ranking, name, genres } = this.props;
     this.setState({
-      genres: this.props.genres,
+      years_exp: years_exp,
+      ranking: ranking,
+      name: name,
+      genres: genres,
     })
+  }
+
+  handeInput(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+    this.props.handleInput(event);
   }
 
   onHandleGenre(property, value) {
@@ -28,14 +43,24 @@ class Filterbar extends React.Component {
     const { genres } = this.state;
     return (
       <div className="filterBar">
+        <span onClick={this.props.hideFilterBar}>Close</span>
         <form>
-          <label htmlFor="years_exp">Years of Experience</label>
-          <input name="years_exp" type="number" />
+          <div>
+            <label htmlFor="years_exp">Min. Years of Experience</label>
+            <input name="years_exp" onChange={this.handeInput} value={this.state.years_exp} type="range" min="0" max="60" />
+            <span>{this.state.years_exp}</span>
+          </div>
 
-
-          <label htmlFor="ranking">Min Ranking</label>
-          <input name="ranking" type="float" />
-
+          <div>
+            <label htmlFor="ranking">Min Ranking</label>
+            <input name="ranking" onChange={this.handeInput} value={this.state.ranking} type="range" min="1.0" max="5.0" step="0.1" />
+            <span>{this.state.ranking}</span>
+          </div>
+          
+          <div>
+            <label htmlFor="name">Name</label>
+            <input name="name" value={this.state.name} onChange={this.handeInput} />
+          </div>
 
           <label htmlFor="musicGenreFilter">Music Genres</label>
           {
@@ -48,9 +73,6 @@ class Filterbar extends React.Component {
             ))
             : null
           }
-
-          <label htmlFor="name">Name</label>
-          <input name="name" />
         </form>
       </div>
     )
