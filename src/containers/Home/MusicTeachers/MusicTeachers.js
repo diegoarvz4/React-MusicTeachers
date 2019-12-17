@@ -149,7 +149,7 @@ class MusicTeachers extends React.Component {
               hideFilterBar={this.hideFilterBar} />
           : null
         }
-        <div>
+        <div className="MusicTeachers">
         { musicTeachers() }
         </div>
       </div>

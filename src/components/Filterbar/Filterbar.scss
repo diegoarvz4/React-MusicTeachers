@@ -8,6 +8,8 @@
   bottom: 0;
   background-color: rgb(184, 182, 182);
   z-index: 100;
+  animation-name: slideFromRightToLeft;
+  animation-duration: 0.5s;
   &-CloseContainer{
     display: flex;
     justify-content: space-between;
@@ -49,4 +51,9 @@
       }
     }
   }
+}
+
+@keyframes slideFromRightToLeft {
+  from {opacity: 0;transform: translateX(10%);}
+  to {opacity: 1;transform: translateX(0%);}
 }

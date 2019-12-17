@@ -8,6 +8,8 @@
   top: 0;
   bottom: 0;
   z-index: 100;
+  animation-name: slideFromLeftToRight;
+  animation-duration: 0.5s;
   &-head{
     display: flex;
     justify-content: space-between;
@@ -39,4 +41,9 @@
   * {
     margin-bottom: 20px;
   }
+}
+
+@keyframes slideFromLeftToRight {
+  from {opacity: 0;transform: translateX(-10%);}
+  to {opacity: 1;transform: translateX(0%);}
 }

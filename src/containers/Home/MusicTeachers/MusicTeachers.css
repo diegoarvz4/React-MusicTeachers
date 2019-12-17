@@ -11,4 +11,9 @@
 .MusicTeachersContainer .MusicTeachers-filter:hover {
   cursor: pointer;
 }
+
+.MusicTeachersContainer .MusicTeachers {
+  padding: 30px;
+  padding-top: 0;
+}
 /*# sourceMappingURL=MusicTeachers.css.map */

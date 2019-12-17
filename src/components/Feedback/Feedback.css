@@ -12,6 +12,8 @@
           animation-name: grow;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
+  background-color: white;
+  z-index: 200;
 }
 
 .feedbackContainerMsg h1 {

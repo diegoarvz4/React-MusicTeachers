@@ -8,6 +8,10 @@
   bottom: 0;
   background-color: #b8b6b6;
   z-index: 100;
+  -webkit-animation-name: slideFromRightToLeft;
+          animation-name: slideFromRightToLeft;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 
 .filterBar-CloseContainer {
@@ -72,5 +76,31 @@
 
 .filterBar-form .fieldContainer-range label {
   margin-bottom: 20px;
+}
+
+@-webkit-keyframes slideFromRightToLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slideFromRightToLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(10%);
+            transform: translateX(10%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
 }
 /*# sourceMappingURL=Filterbar.css.map */

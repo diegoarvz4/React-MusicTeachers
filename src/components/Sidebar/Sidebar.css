@@ -8,6 +8,10 @@
   top: 0;
   bottom: 0;
   z-index: 100;
+  -webkit-animation-name: slideFromLeftToRight;
+          animation-name: slideFromLeftToRight;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 
 .sidebar-head {
@@ -52,5 +56,31 @@
 
 .sidebar * {
   margin-bottom: 20px;
+}
+
+@-webkit-keyframes slideFromLeftToRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slideFromLeftToRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-10%);
+            transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
 }
 /*# sourceMappingURL=Sidebar.css.map */
