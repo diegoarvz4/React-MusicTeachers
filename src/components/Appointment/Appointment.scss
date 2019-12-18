@@ -1,0 +1,16 @@
+.AppointmentContainer{
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 6px -6px #777;
+  border: 1px solid rgb(235, 235, 235);
+  &-teacher{
+    font-size: 25px;
+    margin-bottom: 10px;
+    span{
+      font-weight: bold;
+    }
+  }
+  &-Date{
+    font-size: 15px;
+  }
+}

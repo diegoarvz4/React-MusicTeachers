@@ -1,7 +1,9 @@
 .themeBarContainer {
   padding: 10px;
   padding-bottom: 40px;
-  background-color: gray;
+  background-color: #1cb5e0;
+  color: #000046;
+  font-weight: bold;
 }
 
 .themeBarContainer-head {
@@ -25,6 +27,6 @@
 }
 
 .themeBarContainer-head span {
-  font-size: 20px;
+  font-size: 30px;
 }
 /*# sourceMappingURL=ThemeBar.css.map */

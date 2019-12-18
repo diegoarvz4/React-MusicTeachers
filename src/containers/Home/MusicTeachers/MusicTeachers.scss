@@ -1,3 +1,5 @@
+@import '../../../assets/colors';
+
 .MusicTeachersContainer{
   .MusicTeachers-filter{
     position: relative;
@@ -6,7 +8,7 @@
     right: -70%;
     padding: 12px;
     border-radius: 36px;
-    background-color: rgb(230, 230, 230);
+    background-image: $button-gradient3;
     &:hover{
       cursor: pointer;
     }

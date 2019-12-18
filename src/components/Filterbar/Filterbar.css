@@ -1,12 +1,13 @@
 .filterBar {
   position: absolute;
-  padding: 10px;
-  width: 70%;
-  height: 100%;
+  padding: 40px;
+  width: 80%;
+  min-height: 100%;
+  max-height: 100%;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #b8b6b6;
+  background-color: #f6f4f3;
   z-index: 100;
   -webkit-animation-name: slideFromRightToLeft;
           animation-name: slideFromRightToLeft;
@@ -46,6 +47,7 @@
 .filterBar-form label {
   display: block;
   margin-bottom: 10px;
+  font-size: 20px;
 }
 
 .filterBar-form .fieldContainer {
@@ -72,10 +74,27 @@
 
 .filterBar-form .fieldContainer-range input {
   margin-right: 10px;
+  width: 90%;
 }
 
 .filterBar-form .fieldContainer-range label {
   margin-bottom: 20px;
+}
+
+.filterBar-form .fieldContainerGenres .inputCheckbox {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.checkboxesContainer {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @-webkit-keyframes slideFromRightToLeft {

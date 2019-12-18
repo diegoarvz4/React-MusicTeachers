@@ -7,19 +7,21 @@ import './Feedback.css';
 const Feedback = ({ msg, onMsgFeedbackFinish }) => {
 
   return (
-    <div className="feedbackContainerMsg">
-      <h1>{msg.title}</h1>
-      <p>{msg.content}</p>
-      {
-        msg.url
-        ? <Link to={{
-              pathname: `${msg.url}`
-            }}>
-            <button onClick={onMsgFeedbackFinish}>Ok</button>
-          </Link> 
-        : <button onClick={onMsgFeedbackFinish}>Ok</button>
-      }
-      
+    <div className="feedbackContainer">
+      <div className="feedbackContainerMsg">
+        <h1>{msg.title}</h1>
+        <p>{msg.content}</p>
+        {
+          msg.url
+          ? <Link to={{
+                pathname: `${msg.url}`
+              }}>
+              <button onClick={onMsgFeedbackFinish}>Ok</button>
+            </Link> 
+          : <button onClick={onMsgFeedbackFinish}>Ok</button>
+        }
+        
+      </div>
     </div>
   );
 }
