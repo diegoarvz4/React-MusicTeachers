@@ -1,3 +1,5 @@
+/* eslint-disable radix */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { appointmentCreate, appointmentEdit } from '../../../store/actions/appointments';
@@ -7,62 +9,65 @@ import './BookAppointment.css';
 class BookAppointment extends React.Component {
   constructor(props) {
     super(props);
+    const { userId } = this.props;
     this.state = {
       name: '',
       date: '',
       time: '',
       music_teacher_id: 1,
-      user_id: this.props.userId,
+      user_id: userId,
       appointment_id: null,
-      edit: false
-    }
-
+      edit: false,
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleOnChange = this.handleOnChange.bind(this);
     this.setTeacherName = this.setTeacherName.bind(this);
   }
 
-  setTeacherName(appo_id) {
-    const { musicTeachers, appointments} = this.props;
-
-    for(let i = 0; i < appointments.length; i+=1){
-      if(appointments[i].id === appo_id){
-        for(let j = 0; j < musicTeachers.length; j+=1){
-          if(appointments[i].music_teacher_id === musicTeachers[j].id){
-            return [musicTeachers[j].id,musicTeachers[j].name];
-          }
-        }
+  componentDidMount() {
+    const { history } = this.props;
+    if (history.location.hash !== '') {
+      // eslint-disable-next-line radix
+      const appoId = parseInt(history.location.hash.match(/\d+/)[0]);
+      this.setState({
+        appointment_id: appoId,
+        edit: true,
+        name: this.setTeacherName(appoId)[1],
+        music_teacher_id: this.setTeacherName(appoId)[0],
+      });
+    } else {
+      const { musicTeachers, location } = this.props;
+      const query = new URLSearchParams(location.search);
+      // eslint-disable-next-line no-restricted-syntax
+      for (const param of query.entries()) {
+        // eslint-disable-next-line prefer-destructuring
+        const name = musicTeachers.filter(mT => mT.id === parseInt(param[1]))[0].name;
+        this.setState({
+          [param[0]]: param[1],
+          name,
+        });
       }
     }
   }
 
-  componentDidMount() {
-    
-    if(this.props.history.location.hash !== ""){
-      const appo_id = parseInt(this.props.history.location.hash.match(/\d+/)[0])
-      this.setState({
-        appointment_id: appo_id,
-        edit: true,
-        name: this.setTeacherName(appo_id)[1],
-        music_teacher_id: this.setTeacherName(appo_id)[0],
-      })
-    } else {
-      const { musicTeachers } = this.props;
-      const query = new URLSearchParams(this.props.location.search);
-      for (let param of query.entries()) {
-        const name = musicTeachers.filter( mT => mT.id === parseInt(param[1]))[0].name;
-        this.setState({
-          [param[0]]: param[1],
-          name: name,
-        })
+  setTeacherName(appoId) {
+    const { musicTeachers, appointments } = this.props;
+    for (let i = 0; i < appointments.length; i += 1) {
+      if (appointments[i].id === appoId) {
+        for (let j = 0; j < musicTeachers.length; j += 1) {
+          if (appointments[i].music_teacher_id === musicTeachers[j].id) {
+            return [musicTeachers[j].id, musicTeachers[j].name];
+          }
+        }
       }
     }
+    return null;
   }
 
 
   handleSubmit(event) {
     event.preventDefault();
-    if(this.state.edit) {
+    if (this.state.edit) {
       const { date, user_id, music_teacher_id, time } = this.state;
       const appointment = {
         date: date+" "+time,

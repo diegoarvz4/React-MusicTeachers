@@ -126,7 +126,7 @@ const appointmentsClear = () => (
   {
     type: actionTypes.APPOINTMENTS_CLEAR,
   }
-),
+);
 
 export {
   appointmentsStart,

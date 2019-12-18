@@ -1,24 +1,22 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
 
-export const musicTeachersGet = (musicTeachers) => {
-  return {
+export const musicTeachersGet = (musicTeachers) => (
+  {
     type: actionTypes.MUSIC_TEACHERS_GET,
     musicTeachers,
   }
-}
+);
 
-export const musicTeachersStart = (auth_token) => {
-  return dispatch => {
+export const musicTeachersStart = (authToken) => (
+  dispatch => {
     axios.get('/music_teachers', {
       headers: {
-        Authorization: auth_token
+        Authorization: authToken,
       },
     })
-    .then(response => {
-      console.log(response);
-      dispatch(musicTeachersGet(response.data));
-    })
-    .catch(error => console.log(error))
+      .then(response => {
+        dispatch(musicTeachersGet(response.data));
+      });
   }
-}
+);

@@ -3,71 +3,71 @@ import { loadingFeedback, loadingFinish, msgFeedbackSet } from './feedback';
 import { appointmentsClear } from './appointments';
 import axios from '../../axios';
 
-const authSuccess = (data) => {
-  return {
+const authSuccess = (data) => (
+  {
     type: actionTypes.AUTH_SUCCESS,
     token: data.auth_token,
     username: data.username,
     email: data.email,
     id: data.id,
   }
-}
+);
 
-const authFail = (error) => {
-  return {
+const authFail = (error) => (
+  {
     type: actionTypes.AUTH_FAIL,
-    error: error
+    error,
   }
-}
+);
 
-const authStart = (user) => {
-  return dispatch => {
+const authStart = (user) => (
+  dispatch => {
     dispatch(loadingFeedback());
     axios.post('/auth/login', user)
-    .then(response => {
-      dispatch(authSuccess({
-        auth_token: response.data.auth_token,
-        username: response.data.user_data.username,
-        email: response.data.user_data.email,
-        id: response.data.user_data.id,
-      }));
-      dispatch(loadingFinish());
-      dispatch(msgFeedbackSet({
-        title: 'Successful Login!',
-        content: 'Time to make appointments with the best music teachers!',
-        url: null,
-      }))
-    })
-    .catch(error => {
-      dispatch(authFail(error))
-      dispatch(loadingFinish());
-      dispatch(msgFeedbackSet({
-         title: 'An Error Ocurred!',
-         content: 'Credentials are not valid.',
-         url: '/',
-      }))
-    })
+      .then(response => {
+        dispatch(authSuccess({
+          auth_token: response.data.auth_token,
+          username: response.data.user_data.username,
+          email: response.data.user_data.email,
+          id: response.data.user_data.id,
+        }));
+        dispatch(loadingFinish());
+        dispatch(msgFeedbackSet({
+          title: 'Successful Login!',
+          content: 'Time to make appointments with the best music teachers!',
+          url: null,
+        }));
+      })
+      .catch(error => {
+        dispatch(authFail(error));
+        dispatch(loadingFinish());
+        dispatch(msgFeedbackSet({
+          title: 'An Error Ocurred!',
+          content: 'Credentials are not valid.',
+          url: '/',
+        }));
+      });
   }
-}
+);
 
-const logout = () => {
-  return {
+const logout = () => (
+  {
     type: actionTypes.LOGOUT,
     logoutState: {
-      token: null, 
-      username: null, 
+      token: null,
+      username: null,
       email: null,
       id: null,
-    }
+    },
   }
-}
+);
 
-const loggingOut = () => {
-  return dispatch => {
+const loggingOut = () => (
+  dispatch => {
     dispatch(appointmentsClear());
     dispatch(logout());
   }
-}
+);
 
 export {
   authSuccess,
