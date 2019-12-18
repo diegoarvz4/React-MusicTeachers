@@ -53,7 +53,11 @@
 .BookAppointmentContainer .Submit button {
   padding: 20px;
   width: 180px;
-  border-radius: 10px;
+  color: #fafffd;
+  font-size: 15px;
+  border-radius: 30px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#000046), to(#1cb5e0));
+  background-image: linear-gradient(to right, #000046, #1cb5e0);
   border: none;
 }
 

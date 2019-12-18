@@ -51,6 +51,11 @@
   border: none;
   padding: 20px;
   border-radius: 20px;
+  background-color: #1cb5e0 !important;
+}
+
+.LoginFormContainer form .fieldContainer input:focus {
+  background-color: white;
 }
 
 .LoginFormContainer form .fieldContainer input:last-child {
@@ -59,6 +64,7 @@
 
 .LoginFormContainer button {
   width: 100%;
+  background-color: #1cb5e0;
   border: none;
   border-radius: 20px;
   margin: 0 auto;

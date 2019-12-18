@@ -64,6 +64,7 @@
   border-radius: 20px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #1cb5e0;
 }
 
 .SignupFormContainer button:hover {

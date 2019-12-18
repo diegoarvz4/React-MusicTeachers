@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Appointment from '../../../components/Appointment/Appointment';
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
+import './Appointments.css'
 
 class Appointments extends React.Component {
 
@@ -23,22 +24,24 @@ class Appointments extends React.Component {
     return (
       <div>
         <ThemeBar section={"My Class Appointments"} />
-        {
-          this.props.appointments.map((appo,idx) => 
-            {
-              const music_teacher_name = this.getTeacherName(appo.music_teacher_id);
-              return (
-                <div key={'Appo'+idx}>
-                  <Appointment 
-                    date={appo.date}
-                    musicTeacherId={appo.music_teacher_id}
-                    musicTeacherName={music_teacher_name}
-                  />
-                </div>
-              )
-            }
-          )
-        }
+        <div className="AppointmentsContainer">
+          {
+            this.props.appointments.map((appo,idx) => 
+              {
+                const music_teacher_name = this.getTeacherName(appo.music_teacher_id);
+                return (
+                  <div key={'Appo'+idx}>
+                    <Appointment 
+                      date={appo.date}
+                      musicTeacherId={appo.music_teacher_id}
+                      musicTeacherName={music_teacher_name}
+                    />
+                  </div>
+                )
+              }
+            )
+          }
+        </div>
       </div>
     )
   }

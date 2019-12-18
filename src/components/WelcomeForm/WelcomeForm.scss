@@ -1,3 +1,10 @@
+$primary-light: #e8e9f3;
+$secondary-light: #1cb5e0;
+$primary-dark: #000046;
+$button-gradient: linear-gradient(to right, #1cb5e0, #000046);
+$button-gradient2: linear-gradient(to right, #000046, #1cb5e0);
+
+
 .WelcomeFormContainer{
   display: flex;
   justify-content: center;
@@ -5,6 +12,15 @@
   flex-direction: column;
   width: 100%;
   button {
+    
+    &:first-child{
+      background-image: $button-gradient;
+    }
+    &:last-child{
+      background-image: $button-gradient2;
+    }
+    color: $primary-light;
+    font-weight: bold;
     width: 80%;
     padding: 20px;
     border: none;

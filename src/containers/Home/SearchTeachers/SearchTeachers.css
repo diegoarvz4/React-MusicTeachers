@@ -6,8 +6,10 @@
   padding: 15px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  border: 1px solid gray;
+  border: 1px solid #dbdbdb;
   border-radius: 40px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
 }
 
 .MusicalInstrumentsContainer {

@@ -60,7 +60,7 @@ table {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: rgba(211, 211, 211, 0.534);
+  background-color: rgba(211, 211, 211, 0.808);
 }
 
 .App {
@@ -68,7 +68,8 @@ body {
   min-height: 100vh;
   width: 100%;
   margin: 0 auto;
-  background-color: white;
+  background-color: #fafffd;
+  color: #1cb5e0;
   position: relative;
 }
 /*# sourceMappingURL=App.css.map */

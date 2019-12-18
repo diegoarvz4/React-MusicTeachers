@@ -5,7 +5,8 @@
   right: -70%;
   padding: 12px;
   border-radius: 36px;
-  background-color: #e6e6e6;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#1cb5e0), to(#087ca7));
+  background-image: linear-gradient(to bottom right, #1cb5e0, #087ca7);
 }
 
 .MusicTeachersContainer .MusicTeachers-filter:hover {

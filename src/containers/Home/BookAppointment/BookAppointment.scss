@@ -1,3 +1,5 @@
+@import '../../../assets/colors';
+
 .BookAppointmentContainer{
   padding: 20px;
   .DateAppointment{
@@ -41,7 +43,10 @@
     button{
       padding: 20px;
       width: 180px;
-      border-radius: 10px;
+      color: $primary-light;
+      font-size: 15px;
+      border-radius: 30px;
+      background-image: $button-gradient2;
       border: none;
       &:hover{
         cursor: pointer;

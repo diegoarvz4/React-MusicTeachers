@@ -1,13 +1,12 @@
 .MusicalInstrumentContainer {
-  border: 1px solid gray;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
   padding: 20px;
-  /* width: 35%; */
   width: 33%;
   text-decoration: none;
-  color: black;
-  /* margin-left: 15%; */
+  background-color: #f6f4f3;
+  color: #000046;
   margin-bottom: 15px;
-  /* margin-right: 15px; */
   margin-left: 10px;
   margin-right: 10px;
 }
