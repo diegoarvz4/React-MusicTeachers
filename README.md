@@ -1,6 +1,6 @@
 # Rect - Music Teachers
 
-> This is a React Application that acts as the front-end of a Music Teachers app.
+> This is a React Application that acts as the front-end of a Music Teachers app by fetchinf from this RoR API https://fathomless-headland-51075.herokuapp.com/.
 
 # Screenshot coming Soon!
 
@@ -9,7 +9,11 @@
 - React
 - Jest
 - Redux
--Axios
+- Axios
+
+# API Github Reposiroty
+
+https://github.com/diegoarvz4/RoR-API-MusicTeachers
 
 ## Live Demo
 
