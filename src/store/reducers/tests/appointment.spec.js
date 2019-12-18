@@ -1,51 +1,52 @@
+/* eslint-disable no-spaced-func */
 import appointmentReducer from '../appointments';
 
+// eslint-disable-next-line func-call-spacing
 describe ('Testing the appointments reducer', () => {
   it('It has initial state when no state is passed', () => {
-    expect(appointmentReducer(undefined, { type: 'Somehintg'})).toBeDefined();
-  })
+    expect(appointmentReducer(undefined, { type: 'Somehintg' })).toBeDefined();
+  });
   it('adds and appointment', () => {
-
-    const initialState =  [];
+    const initialState = [];
     const appointment = {
       id: 1,
       user_id: 2,
       music_teacher: 1,
-      date: '2018-19-20'
-    }
+      date: '2018-19-20',
+    };
     const expectedState = [
-        {
-          id: 1,
-          user_id: 2,
-          music_teacher: 1,
-          date: '2018-19-20'
-        }
-    ]
+      {
+        id: 1,
+        user_id: 2,
+        music_teacher: 1,
+        date: '2018-19-20',
+      },
+    ];
     expect(appointmentReducer(initialState, {
-      type: 'APPOINTMENT_SUCCESS', appointment
-    })).toEqual(expectedState)
-  })
+      type: 'APPOINTMENT_SUCCESS', appointment,
+    })).toEqual(expectedState);
+  });
 
   it('overrides appointments', () => {
-    const initialState =  [{
-      1: 1
+    const initialState = [{
+      1: 1,
     }];
     const appointments = [{
       id: 1,
       user_id: 2,
       music_teacher: 1,
-      date: '2018-19-20'
-    }]
+      date: '2018-19-20',
+    }];
     const expectedState = [
-        {
-          id: 1,
-          user_id: 2,
-          music_teacher: 1,
-          date: '2018-19-20'
-        }
-    ]
+      {
+        id: 1,
+        user_id: 2,
+        music_teacher: 1,
+        date: '2018-19-20',
+      },
+    ];
     expect(appointmentReducer(initialState, {
-      type: 'APPOINTMENTS_GET', appointments: appointments
-    })).toEqual(expectedState)
-  })
-})
+      type: 'APPOINTMENTS_GET', appointments,
+    })).toEqual(expectedState);
+  });
+});

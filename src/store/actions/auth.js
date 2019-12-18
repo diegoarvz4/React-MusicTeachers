@@ -69,4 +69,9 @@ const loggingOut = () => {
   }
 }
 
-export { authSuccess, authFail, authStart, loggingOut };
+export {
+  authSuccess,
+  authFail,
+  authStart,
+  loggingOut,
+};

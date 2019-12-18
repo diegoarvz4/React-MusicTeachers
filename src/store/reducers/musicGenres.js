@@ -1,12 +1,12 @@
 import * as actionTypes from '../actions/actionTypes';
 
-const initialState = []
+const initialState = [];
 
 export default (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case actionTypes.MUSIC_GENRES_GET:
-      return [...action.musicGenres]
+      return [...action.musicGenres];
     default:
-      return state
+      return state;
   }
-}
+};
