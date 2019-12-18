@@ -1,0 +1,59 @@
+.filterBar{
+  position: absolute;
+  padding: 10px;
+  width: 70%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(184, 182, 182);
+  z-index: 100;
+  animation-name: slideFromRightToLeft;
+  animation-duration: 0.5s;
+  &-CloseContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    img {
+      width: 30px;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .fieldContainer{
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgb(240, 240, 240);
+      input {
+        border: none;
+        padding: 8px;
+        width: 100%;
+        border-radius: 10px;
+      }
+      &-range {
+        display: flex;
+        align-items: center;
+        input {
+          margin-right: 10px;
+        }
+        label {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideFromRightToLeft {
+  from {opacity: 0;transform: translateX(10%);}
+  to {opacity: 1;transform: translateX(0%);}
+}

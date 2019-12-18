@@ -1,0 +1,41 @@
+.feedbackContainerMsg{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  border: 1px solid rgb(231, 231, 231);
+  overflow: hidden;
+  animation-name: grow;
+  animation-duration: 0.5s;
+  background-color: white;
+  z-index: 200;
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid rgb(196, 196, 196);
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 10px;
+    width: 90px;
+    border: none;
+    border-radius: 25px;
+    float: right;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes grow {
+  from {opacity: 0; width: 0}
+  to {opacity: 1; width: 80%}
+}

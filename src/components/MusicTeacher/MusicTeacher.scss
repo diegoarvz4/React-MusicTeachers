@@ -1,0 +1,54 @@
+.MusicTeacherContainer{
+  border: 1px solid rgb(219, 219, 219);
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 6px -6px #777;
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  &-exp{
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    img{
+      width: 20px;
+      position: relative;
+      top: -2px;
+    }
+    &-rank{
+      display: flex;
+      align-items: center;
+    }
+    div{
+      margin-right: 10px;
+    }
+  }
+  &-genres{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    span{
+      padding: 10px 5px;
+      padding-left:0;
+      padding-bottom: 2px;
+      margin-right: 10px;
+    }
+  }
+
+  &-button{
+    display: flex;
+    justify-content: flex-end;
+    button{
+      border: none;
+      padding: 10px;
+      border-radius: 25px;
+      width: 70px;
+      font-size: 15px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.MusicalInstrumentContainer {
+  border: 1px solid gray;
+  padding: 20px;
+  /* width: 35%; */
+  width: 33%;
+  text-decoration: none;
+  color: black;
+  /* margin-left: 15%; */
+  margin-bottom: 15px;
+  /* margin-right: 15px; */
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.MusicalInstrumentContainer .MusicalInstrument {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+}
+/*# sourceMappingURL=MusicalInstrument.css.map */
