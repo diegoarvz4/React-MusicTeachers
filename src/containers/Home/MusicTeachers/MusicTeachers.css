@@ -1,0 +1,19 @@
+.MusicTeachersContainer .MusicTeachers-filter {
+  position: relative;
+  width: 59px;
+  top: -30px;
+  right: -70%;
+  padding: 12px;
+  border-radius: 36px;
+  background-color: #e6e6e6;
+}
+
+.MusicTeachersContainer .MusicTeachers-filter:hover {
+  cursor: pointer;
+}
+
+.MusicTeachersContainer .MusicTeachers {
+  padding: 30px;
+  padding-top: 0;
+}
+/*# sourceMappingURL=MusicTeachers.css.map */

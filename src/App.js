@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import { connect } from 'react-redux';
+import Home from './containers/Home/Home';
+import Welcome from './containers/Welcome/Welcome';
+import Loading from './components/Loading/Loading';
+import Feedback from './components/Feedback/Feedback';
 
-function App() {
+function App({ isAuthenticated, feedback, appointment_feedback }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        { feedback.loading
+          ? <Loading />
+          : null
+        }
+        {
+          feedback.feedbackMsg
+          ? <Feedback />
+          : null
+        }
+        {isAuthenticated 
+          ? <Home /> 
+          : <Welcome />
+        }
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    authentication: state.authReducer,
+    isAuthenticated: state.authReducer.token !== null,
+    feedback: state.feedback,
+  };
+}
+
+export default connect(mapStateToProps)(App);

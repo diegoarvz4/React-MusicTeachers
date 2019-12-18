@@ -1,0 +1,56 @@
+.LoginFormContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  &-title{
+    font-size: 20px; 
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .fieldContainer{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      label{
+        margin-bottom: 10px;
+      }
+      input {
+        border: none;
+        padding: 20px;
+        border-radius: 20px;
+        &:last-child{
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  button{
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  hr {
+    margin-top: 40px;
+    border-bottom: 0.5px solid rgb(212, 212, 212);
+    width: 100%;
+  }
+
+  span {
+    text-decoration: underline;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+}

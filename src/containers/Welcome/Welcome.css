@@ -1,0 +1,40 @@
+.WelcomeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  padding: 40px;
+}
+
+.WelcomeContainer .WelcomeWrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.WelcomeContainer .LogoTitle {
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.WelcomeContainer h2 {
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=Welcome.css.map */

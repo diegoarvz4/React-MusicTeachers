@@ -1,0 +1,80 @@
+.MusicTeacherContainer {
+  border: 1px solid #dbdbdb;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+}
+
+.MusicTeacherContainer h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.MusicTeacherContainer-exp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.MusicTeacherContainer-exp img {
+  width: 20px;
+  position: relative;
+  top: -2px;
+}
+
+.MusicTeacherContainer-exp-rank {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.MusicTeacherContainer-exp div {
+  margin-right: 10px;
+}
+
+.MusicTeacherContainer-genres {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 12px;
+}
+
+.MusicTeacherContainer-genres span {
+  padding: 10px 5px;
+  padding-left: 0;
+  padding-bottom: 2px;
+  margin-right: 10px;
+}
+
+.MusicTeacherContainer-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.MusicTeacherContainer-button button {
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  width: 70px;
+  font-size: 15px;
+}
+
+.MusicTeacherContainer-button button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=MusicTeacher.css.map */

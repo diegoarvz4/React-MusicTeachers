@@ -1,0 +1,22 @@
+.WelcomeContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 40px;
+  .WelcomeWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .LogoTitle {
+    font-size: 60px;
+    font-weight: bold;
+    margin-top: 100px;
+    margin-bottom: 80px;
+  }
+  h2{
+    margin-bottom: 30px;
+  }
+}

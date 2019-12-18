@@ -1,0 +1,85 @@
+.LoginFormContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+}
+
+.LoginFormContainer-title {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.LoginFormContainer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.LoginFormContainer form .fieldContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.LoginFormContainer form .fieldContainer label {
+  margin-bottom: 10px;
+}
+
+.LoginFormContainer form .fieldContainer input {
+  border: none;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.LoginFormContainer form .fieldContainer input:last-child {
+  margin-bottom: 30px;
+}
+
+.LoginFormContainer button {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.LoginFormContainer button:hover {
+  cursor: pointer;
+}
+
+.LoginFormContainer hr {
+  margin-top: 40px;
+  border-bottom: 0.5px solid #d4d4d4;
+  width: 100%;
+}
+
+.LoginFormContainer span {
+  text-decoration: underline;
+}
+
+.LoginFormContainer span:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=Login.css.map */
