@@ -1,21 +1,19 @@
+@import '../../assets/colors';
+
 .MusicalInstrumentContainer {
-  border: 1px solid gray;
-    padding: 20px;
-    /* width: 35%; */
-    width: 33%;
-    text-decoration: none;
-    color: black;
-    /* margin-left: 15%; */
-    margin-bottom: 15px;
-    /* margin-right: 15px; */
-    margin-left: 10px;
-    margin-right: 10px;
+  box-shadow: 0 10px 6px -6px #777;
+  padding: 20px;
+  width: 33%;
+  text-decoration: none;
+  background-color: $terciary-light;
+  color: $primary-dark;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   .MusicalInstrument{
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-decoration: none;
   }
-
 }

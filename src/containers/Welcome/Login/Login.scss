@@ -1,3 +1,8 @@
+$primary-light: #e8e9f3;
+$secondary-light: #1cb5e0;
+$primary-dark: #000046;
+$button-gradient: linear-gradient(to right, #1cb5e0, #000046);
+
 .LoginFormContainer{
   display: flex;
   justify-content: center;
@@ -24,6 +29,10 @@
         border: none;
         padding: 20px;
         border-radius: 20px;
+        background-color: $secondary-light !important;
+        &:focus{
+          background-color: white;
+        }
         &:last-child{
           margin-bottom: 30px;
         }
@@ -32,6 +41,7 @@
   }
   button{
     width: 100%;
+    background-color: $secondary-light;
     border: none;
     border-radius: 20px;
     margin: 0 auto;

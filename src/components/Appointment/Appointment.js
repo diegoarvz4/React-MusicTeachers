@@ -1,4 +1,5 @@
 import React from 'react';
+import './Appointment.css';
 
 export default (props) => {
 
@@ -13,10 +14,11 @@ export default (props) => {
   }
  
   return (
-    <div>
-      <h1>Class with {props.musicTeacherName}</h1>
-      <span>On {formatDate()}</span>
-      <span>at {formatTime()} hours </span>
+    <div className="AppointmentContainer">
+      <h1 className="AppointmentContainer-teacher">Class with <span>{props.musicTeacherName}</span></h1>
+      <div className="AppointmentContainer-Date">
+        <span>On {formatDate()} at {formatTime()} hours</span>
+      </div>
     </div>
   )
 }

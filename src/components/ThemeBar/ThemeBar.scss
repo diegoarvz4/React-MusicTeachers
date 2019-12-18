@@ -1,7 +1,11 @@
+@import '../../assets/colors';
+
 .themeBarContainer{
   padding: 10px;
   padding-bottom: 40px;
-  background-color: gray;
+  background-color:$secondary-light;
+  color: $primary-dark;
+  font-weight: bold;
   &-head  {
     width: 100%;
     padding: 10px;
@@ -16,7 +20,7 @@
       }
     }
     span {
-      font-size: 20px;
+      font-size: 30px;
     }
   }
 }

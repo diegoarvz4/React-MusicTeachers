@@ -71,12 +71,12 @@ class Filterbar extends React.Component {
           </div>
 
           <div className="fieldContainerGenres">
-          <label htmlFor="musicGenreFilter">Music Genres</label>
+            <label htmlFor="musicGenreFilter">Music Genres</label>
             {
               genres
               ? Object.keys(genres).map((genreKey) => (
-                <div key={genreKey}>
-                  <input type='checkbox' checked={genres[genreKey]} onChange={() => this.onHandleGenre(genreKey, !genres[genreKey])}  />
+                <div className="checkboxesContainer" key={genreKey}>
+                  <input className="inputCheckbox" type='checkbox' checked={genres[genreKey]} onChange={() => this.onHandleGenre(genreKey, !genres[genreKey])}  />
                   <span>{genreKey}</span>
                 </div>
               ))

@@ -1,5 +1,9 @@
+@import '../../assets/colors';
+
 nav {
   width: 100%;
+  background-color: $secondary-light;
+  color: $primary-dark;
   ul {
     display: flex;
     width: 100%;

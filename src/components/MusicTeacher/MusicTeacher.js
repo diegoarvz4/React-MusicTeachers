@@ -9,7 +9,7 @@ export default ({ id, name, ranking, years_exp, musicGenres }) => {
       <h1>{ name }</h1>
       <div className="MusicTeacherContainer-exp">
         <div className="MusicTeacherContainer-exp-rank">
-          <img src={starIcon}/> 
+          <img src={starIcon} alt="ranking"/> 
           <span>{ ranking }</span>
         </div>
         <div>{ years_exp } yrs of exp.</div>

@@ -68,10 +68,13 @@
 
 .MusicTeacherContainer-button button {
   border: none;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 25px;
-  width: 70px;
+  width: 80px;
   font-size: 15px;
+  color: #fafffd;
+  background-image: -webkit-gradient(linear, left top, right top, from(#1cb5e0), to(#000046));
+  background-image: linear-gradient(to right, #1cb5e0, #000046);
 }
 
 .MusicTeacherContainer-button button:hover {

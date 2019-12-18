@@ -1,0 +1,21 @@
+.AppointmentContainer {
+  padding: 20px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+  border: 1px solid #ebebeb;
+}
+
+.AppointmentContainer-teacher {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.AppointmentContainer-teacher span {
+  font-weight: bold;
+}
+
+.AppointmentContainer-Date {
+  font-size: 15px;
+}
+/*# sourceMappingURL=Appointment.css.map */

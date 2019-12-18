@@ -1,9 +1,28 @@
-.feedbackContainerMsg{
+@import '../../assets/colors';
+
+.feedbackContainer{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.404);
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  animation-name: appear;
+  animation-duration: 0.5s;
+  z-index: 100;
+}
+
+@keyframes appear {
+  from {opacity:  0;}
+  to {opacity: 1;}
+}
+
+.feedbackContainerMsg{
   width: 80%;
+  margin: 70px auto;
+
   padding: 20px;
   border: 1px solid rgb(231, 231, 231);
   overflow: hidden;
@@ -28,6 +47,7 @@
     width: 90px;
     border: none;
     border-radius: 25px;
+    background-image: $button-gradient3;
     float: right;
     &:hover{
       cursor: pointer;

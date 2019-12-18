@@ -1,12 +1,15 @@
+@import '../../assets/colors';
+
 .filterBar{
   position: absolute;
-  padding: 10px;
-  width: 70%;
-  height: 100%;
+  padding: 40px;
+  width: 80%;
+  min-height: 100%;
+  max-height: 100%;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgb(184, 182, 182);
+  background-color: $terciary-light;
   z-index: 100;
   animation-name: slideFromRightToLeft;
   animation-duration: 0.5s;
@@ -28,6 +31,7 @@
     label {
       display: block;
       margin-bottom: 10px;
+      font-size: 20px;
     }
     .fieldContainer{
       margin-bottom: 20px;
@@ -44,13 +48,27 @@
         align-items: center;
         input {
           margin-right: 10px;
+          width: 90%;
         }
         label {
           margin-bottom: 20px;
         }
       }
     }
+    .fieldContainerGenres{
+      .inputCheckbox {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
+}
+
+.checkboxesContainer{
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 @keyframes slideFromRightToLeft {

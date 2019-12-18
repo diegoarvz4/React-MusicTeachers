@@ -66,7 +66,7 @@ class BookAppointment extends React.Component {
               <input type="time" name="time" onChange={this.handleOnChange}/>
             </div>
             <div className="Submit">
-              <button type="submit">Book</button>
+              <button type="submit">Confirm</button>
             </div>
           </form>
         </div>
