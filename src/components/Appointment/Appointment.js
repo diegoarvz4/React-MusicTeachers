@@ -1,7 +1,8 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './Appointment.css';
 
-export default (props) => {
+const Appointment = (props) => {
 
   const formatDate = () => {
     const { date } = props;
@@ -12,6 +13,10 @@ export default (props) => {
     const { date } = props;
     return date.match(/\d\d:\d\d/)[0]
   }
+
+  const toEditAppointment = (id) => {
+    props.history.push({pathname: `/music_teachers/book`, hash:`edit${id}`});
+  }
  
   return (
     <div className="AppointmentContainer">
@@ -19,6 +24,10 @@ export default (props) => {
       <div className="AppointmentContainer-Date">
         <span>On {formatDate()} at {formatTime()} hours</span>
       </div>
+      <span className="edit" onClick={() => toEditAppointment(props.id)}>Edit</span>
+      <span className="delete" onClick={props.appointmentDelete}>Delete</span>
     </div>
   )
 }
+
+export default withRouter(Appointment);

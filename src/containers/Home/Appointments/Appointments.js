@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Appointment from '../../../components/Appointment/Appointment';
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 import './Appointments.css'
-
+import { appointmentDelete } from '../../../store/actions/appointments';
 class Appointments extends React.Component {
 
   constructor(props) {
@@ -33,8 +33,10 @@ class Appointments extends React.Component {
                   <div key={'Appo'+idx}>
                     <Appointment 
                       date={appo.date}
+                      id={appo.id}
                       musicTeacherId={appo.music_teacher_id}
                       musicTeacherName={music_teacher_name}
+                      appointmentDelete={() => this.props.onDeleteAppointment(appo.id, this.props.token)}
                     />
                   </div>
                 )
@@ -50,8 +52,15 @@ class Appointments extends React.Component {
 const mapStateToProps = state => {
   return {
     appointments: state.appointments,
-    musicTeachers: state.musTeachers
+    musicTeachers: state.musTeachers,
+    token: state.authReducer.token,
   }
 }
 
-export default connect(mapStateToProps)(Appointments);
+const mapDispatchToProps = dispatch => {
+  return {
+    onDeleteAppointment: (id, token) => dispatch(appointmentDelete(id, token)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Appointments);

@@ -46,6 +46,65 @@ const appointmentCreate = (token, appointment) => {
   }
 }
 
+const appointmentEdit = (id, appointment, token) => {
+  return dispatch => {
+    dispatch(loadingFeedback());
+    axios.put(`/appointments/${id}`, appointment,{
+      headers: {
+        Authorization: token,
+      },
+    })
+    .then(() => {
+      dispatch(appointmentsStart(token));
+      dispatch(loadingFinish());
+      dispatch(msgFeedbackSet({
+        title: 'Appointment updated!',
+        content: 'Checkout your appointments in the dashboard.',
+        url: '/appointments'
+      }));
+    })
+    .catch(error => {
+      console.log(error.response.data)
+      dispatch(loadingFinish());
+      dispatch(msgFeedbackSet({
+        title: 'An error has ocurred!',
+        content: 'The appointment could not be updated.',
+        url: '/appointments'
+      }));
+    })
+  }
+}
+
+const appointmentDelete = (id, token) => {
+  return dispatch => {
+    dispatch(loadingFeedback());
+    axios.delete(`/appointments/${id}`, {
+      headers: {
+        Authorization: token
+      }
+    })
+    .then(() => {
+      dispatch(loadingFinish());
+      dispatch(appointmentsStart(token));
+      dispatch(msgFeedbackSet({
+        title: 'Appointment deleted!',
+        content: 'Checkout your appointments in the dashboard.',
+        url: '/appointments'
+      }));
+    })
+    .catch((error) => {
+      console.log(error.response);
+      dispatch(loadingFinish());
+      dispatch(appointmentsStart(token));
+      dispatch(msgFeedbackSet({
+        title: 'An error ocurred!',
+        content: 'The appointment could not be deleted.',
+        url: '/appointments'
+      }));
+    })
+  }
+}
+
 const appointmentsGet = data => {
   return {
     type: actionTypes.APPOINTMENTS_GET,
@@ -72,4 +131,10 @@ const appointmentsClear = () => {
   }
 }
 
-export { appointmentsStart, appointmentCreate, appointmentsClear };
+export { 
+  appointmentsStart, 
+  appointmentCreate, 
+  appointmentsClear, 
+  appointmentEdit,
+  appointmentDelete 
+};
