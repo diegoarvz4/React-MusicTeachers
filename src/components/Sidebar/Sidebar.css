@@ -12,6 +12,8 @@
           animation-name: slideFromLeftToRight;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
+  -webkit-box-shadow: 19px -4px 79px -12px #777;
+          box-shadow: 19px -4px 79px -12px #777;
 }
 
 .sidebar-head {

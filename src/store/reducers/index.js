@@ -13,6 +13,6 @@ const rootReducer = combineReducers({
   musTeachers: musicTeachersReducer,
   appointments: appointmentsReducer,
   feedback: feedbackReducer,
-})
+});
 
 export default rootReducer;

@@ -76,22 +76,22 @@
 @-webkit-keyframes grow {
   from {
     opacity: 0;
-    width: 0;
+    margin-top: 100px;
   }
   to {
     opacity: 1;
-    width: 80%;
+    margin-top: 70px;
   }
 }
 
 @keyframes grow {
   from {
     opacity: 0;
-    width: 0;
+    margin-top: 100px;
   }
   to {
     opacity: 1;
-    width: 80%;
+    margin-top: 70px;
   }
 }
 /*# sourceMappingURL=Feedback.css.map */

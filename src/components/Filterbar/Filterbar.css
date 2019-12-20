@@ -13,6 +13,8 @@
           animation-name: slideFromRightToLeft;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
+  -webkit-box-shadow: -19px 25px 88px -20px #777;
+          box-shadow: -19px 25px 88px -20px #777;
 }
 
 .filterBar-CloseContainer {

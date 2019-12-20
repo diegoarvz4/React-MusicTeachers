@@ -1,23 +1,22 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
 
-export const musicGenresGet = (musicGenres) => {
-  return {
+export const musicGenresGet = (musicGenres) => (
+  {
     type: actionTypes.MUSIC_GENRES_GET,
     musicGenres,
   }
-}
+);
 
-export const musicGenresStart = (auth_token) => {
-  return dispatch => {
+export const musicGenresStart = (authToken) => (
+  dispatch => {
     axios.get('/music_genres', {
       headers: {
-        Authorization: auth_token
+        Authorization: authToken,
       },
     })
-    .then(response => {
-      dispatch(musicGenresGet(response.data));
-    })
-    .catch(error => console.log(error))
-  } 
-}
+      .then(response => {
+        dispatch(musicGenresGet(response.data));
+      });
+  }
+);
