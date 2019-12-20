@@ -10,6 +10,7 @@
 - Jest
 - Redux
 - Axios
+- The UI Design is based on the desgin of Vinisha Panjikar. More [here](https://www.behance.net/gallery/77208667/MediCo-Medical-mobile-app-UIUX-design?tracking_source=search%7Cmobile%20app)]  
 
 # API Github Reposiroty
 
