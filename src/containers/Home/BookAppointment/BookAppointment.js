@@ -1,5 +1,3 @@
-/* eslint-disable radix */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { appointmentCreate, appointmentEdit } from '../../../store/actions/appointments';
@@ -67,48 +65,60 @@ class BookAppointment extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.state.edit) {
-      const { date, user_id, music_teacher_id, time } = this.state;
-      const appointment = {
-        date: date+" "+time,
+    const { edit, appointment_id } = this.state;
+    if (edit) {
+      const {
+        date,
         user_id,
-        music_teacher_id
-      }
-      console.log(appointment)
-      this.props.onAppointmentEdit(this.state.appointment_id, appointment, this.props.token)
+        music_teacher_id,
+        time,
+      } = this.state;
+      const appointment = {
+        date: `${date} ${time}`,
+        user_id,
+        music_teacher_id,
+      };
+      const { onAppointmentEdit, token } = this.props;
+      onAppointmentEdit(appointment_id, appointment, token);
     } else {
-      const { date, user_id, music_teacher_id, time } = this.state;
-      const appointment = {
-        date: date+" "+time,
+      const { onAppointmentCreate, token } = this.props;
+      const {
+        date,
         user_id,
-        music_teacher_id
-      }
-      this.props.onAppointmentCreate(this.props.token, appointment);
+        music_teacher_id,
+        time,
+      } = this.state;
+      const appointment = {
+        date: `${date} ${time}`,
+        user_id,
+        music_teacher_id,
+      };
+      onAppointmentCreate(token, appointment);
     }
-    
   }
 
   handleOnChange(event) {
     this.setState({
-      [event.target.name]: event.target.value
-    })
+      [event.target.name]: event.target.value,
+    });
   }
 
   render() {
-    const bookOperation = this.state.edit ? 'Edit:' : '';
+    const { edit, name, date } = this.state;
+    const bookOperation = edit ? 'Edit:' : '';
     return (
       <div>
-        <ThemeBar section={`${bookOperation} Book a class with ${this.state.name}`}/>
+        <ThemeBar section={`${bookOperation} Book a class with ${name}`} />
         <div className="BookAppointmentContainer">
           <form onSubmit={this.handleSubmit}>
             <div className="DateAppointment">
               <label htmlFor="date">Date</label>
-              <input type="date" name="date" value={this.state.date} onChange={this.handleOnChange}/>
+              <input type="date" name="date" value={date} onChange={this.handleOnChange} />
             </div>
 
             <div className="TimeAppointment">
               <label htmlFor="time">Time</label>
-              <input type="time" name="time" onChange={this.handleOnChange}/>
+              <input type="time" name="time" onChange={this.handleOnChange} />
             </div>
             <div className="Submit">
               <button type="submit">Confirm</button>
@@ -116,24 +126,24 @@ class BookAppointment extends React.Component {
           </form>
         </div>
       </div>
-    ); 
+    );
   }
 }
 
-const mapStateToProps = state => {
-  return {
+const mapStateToProps = state => (
+  {
     userId: state.authReducer.id,
     token: state.authReducer.token,
     musicTeachers: state.musTeachers,
     appointments: state.appointments,
   }
-}
+);
 
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => (
+  {
     onAppointmentCreate: (token, appointment) => dispatch(appointmentCreate(token, appointment)),
     onAppointmentEdit: (id, token) => dispatch(appointmentEdit(id, token)),
   }
-}
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookAppointment);
