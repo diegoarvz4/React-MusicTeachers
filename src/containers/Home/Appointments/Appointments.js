@@ -28,22 +28,24 @@ class Appointments extends React.Component {
       <div>
         <ThemeBar section="My Class Appointments" />
         <div className="AppointmentsContainer">
-          {
-            appointments.map((appo, idx) => {
-              const musicTeacherName = this.getTeacherName(appo.music_teacher_id);
-              return (
-                <div key={`Appo${idx + 1}`}>
-                  <Appointment
-                    date={appo.date}
-                    id={appo.id}
-                    musicTeacherId={appo.music_teacher_id}
-                    musicTeacherName={musicTeacherName}
-                    appointmentDelete={() => onDeleteAppointment(appo.id, token)}
-                  />
-                </div>
-              );
-            })
-          }
+          <ul>
+            {
+              appointments.map((appo, idx) => {
+                const musicTeacherName = this.getTeacherName(appo.music_teacher_id);
+                return (
+                  <li key={`Appo${idx + 1}`}>
+                    <Appointment
+                      date={appo.date}
+                      id={appo.id}
+                      musicTeacherId={appo.music_teacher_id}
+                      musicTeacherName={musicTeacherName}
+                      appointmentDelete={() => onDeleteAppointment(appo.id, token)}
+                    />
+                  </li>
+                );
+              })
+            }
+          </ul>
         </div>
       </div>
     );
