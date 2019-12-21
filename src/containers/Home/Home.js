@@ -56,16 +56,29 @@ class Home extends React.Component {
     const { auth, onLogout } = this.props;
     return (
       <div>
-        <Navigation showSideBar={this.showSideBar} />
-        {
-          sidebar
-            ? <Sidebar username={auth.username} hideSideBar={this.hideSideBar} logout={onLogout} />
-            : null
-        }
-        <Route path="/" exact component={SearchTeachers} />
-        <Route path="/music_teachers" exact component={MusicTeachers} />
-        <Route path="/music_teachers/book" component={BookAppointment} />
-        <Route path="/appointments" exact component={Appointments} />
+        <header>
+          <Navigation showSideBar={this.showSideBar} />
+        </header>
+        <main>
+          {
+            sidebar
+              ? (
+                <Sidebar
+                  username={auth.username}
+                  hideSideBar={this.hideSideBar}
+                  logout={onLogout}
+                />
+              )
+              : null
+          }
+          <Route path="/" exact component={SearchTeachers} />
+          <Route path="/music_teachers" exact component={MusicTeachers} />
+          <Route path="/music_teachers/book" component={BookAppointment} />
+          <Route path="/appointments" exact component={Appointments} />
+        </main>
+        <footer>
+          <span>Musiclass 2020</span>
+        </footer>
       </div>
     );
   }
