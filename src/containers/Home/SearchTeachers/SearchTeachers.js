@@ -35,22 +35,22 @@ class SearchTeachers extends React.Component {
       <div className="SearchTeachersContainer">
         <ThemeBar section="Music Teachers" />
         <input className="SearchTeachersContainer-search" placeholder="Type Instrument" value={kind} onChange={this.handleInput} />
-        <div className="MusicalInstrumentsContainer">
+        <ul className="MusicalInstrumentsContainer">
           {
             typesOfMusicaInstruments().map((inst) => (
-              <Link
-                className="MusicalInstrumentContainer"
-                key={inst.id}
-                to={{
-                  pathname: '/music_teachers',
-                  search: `?instrument=${inst.kind}`,
-                }}
-              >
-                <MusicalInstrument name={inst.kind} />
-              </Link>
+              <li className="MusicalInstrumentContainer" key={inst.id}>
+                <Link
+                  to={{
+                    pathname: '/music_teachers',
+                    search: `?instrument=${inst.kind}`,
+                  }}
+                >
+                  <MusicalInstrument name={inst.kind} />
+                </Link>
+              </li>
             ))
           }
-        </div>
+        </ul>
       </div>
     );
   }

@@ -18,5 +18,9 @@
   padding: 20px;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+  a {
+    text-decoration: none;
+    color: black; 
+    font-weight: bold;
+  }
 }

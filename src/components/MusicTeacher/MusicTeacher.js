@@ -12,7 +12,7 @@ export default ({
 }) => (
   (
     <div className="MusicTeacherContainer">
-      <h1>{ name }</h1>
+      <h2>{ name }</h2>
       <div className="MusicTeacherContainer-exp">
         <div className="MusicTeacherContainer-exp-rank">
           <img src={starIcon} alt="ranking" />

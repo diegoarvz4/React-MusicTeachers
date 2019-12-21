@@ -25,6 +25,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.MusicalInstrumentsContainer a {
   text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 /*# sourceMappingURL=SearchTeachers.css.map */

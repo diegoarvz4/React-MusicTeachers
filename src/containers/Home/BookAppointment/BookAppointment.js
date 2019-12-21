@@ -115,7 +115,6 @@ class BookAppointment extends React.Component {
               <label htmlFor="date">Date</label>
               <input type="date" name="date" value={date} onChange={this.handleOnChange} />
             </div>
-
             <div className="TimeAppointment">
               <label htmlFor="time">Time</label>
               <input type="time" name="time" onChange={this.handleOnChange} />

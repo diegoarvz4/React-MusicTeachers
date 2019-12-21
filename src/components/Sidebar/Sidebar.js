@@ -14,7 +14,7 @@ export default ({ hideSideBar, logout, username }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-head">
-        <h1 className="sidebar-user">{username}</h1>
+        <h2 className="sidebar-user">{username}</h2>
         <img onClick={hideSideBar} src={closeIcon} alt="hide" />
       </div>
       <hr />

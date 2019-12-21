@@ -8,7 +8,7 @@ const Feedback = ({ msg, onMsgFeedbackFinish }) => (
   (
     <div className="feedbackContainer">
       <div className="feedbackContainerMsg">
-        <h1>{msg.title}</h1>
+        <h2>{msg.title}</h2>
         <p>{msg.content}</p>
         {
           msg.url

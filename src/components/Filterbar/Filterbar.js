@@ -57,7 +57,7 @@ class Filterbar extends React.Component {
     return (
       <div className="filterBar">
         <div className="filterBar-CloseContainer">
-          <h1>Options</h1>
+          <h2>Options</h2>
           <img src={closeIcon} alt="close" onClick={hideFilterBar} />
         </div>
         <form className="filterBar-form">

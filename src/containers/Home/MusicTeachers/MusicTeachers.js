@@ -121,14 +121,15 @@ class MusicTeachers extends React.Component {
         }
 
         return musicTeachersFiltered.map(musTeach => (
-          <MusicTeacher
-            key={musTeach.id}
-            name={musTeach.name}
-            years_exp={musTeach.years_exp}
-            ranking={musTeach.ranking}
-            id={musTeach.id}
-            musicGenres={musTeach.music_genres}
-          />
+          <li key={musTeach.id}>
+            <MusicTeacher
+              name={musTeach.name}
+              years_exp={musTeach.years_exp}
+              ranking={musTeach.ranking}
+              id={musTeach.id}
+              musicGenres={musTeach.music_genres}
+            />
+          </li>
         ));
       }
       return null;
@@ -153,7 +154,9 @@ class MusicTeachers extends React.Component {
             : null
         }
         <div className="MusicTeachers">
-          { musicTeachersGet() }
+          <ul>
+            { musicTeachersGet() }
+          </ul>
         </div>
       </div>
     );
