@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Sidebar.css';
+import './Sidebar.scss';
 import closeIcon from './close-icon.svg';
 import appoIcon from './appointment.svg';
 import teachersIcon from './teachers.svg';

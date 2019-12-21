@@ -1,5 +1,5 @@
 import React from 'react';
-import './WelcomeForm.css';
+import './WelcomeForm.scss';
 
 export default ({ showLogin, showSignUp }) => (
   (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './MusicalInstrument.css';
+import './MusicalInstrument.scss';
 
 export default ({ name }) => (
   (

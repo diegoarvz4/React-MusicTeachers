@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navigation.css';
+import './Navigation.scss';
 import menuIcon from './menu-icon.svg';
 
 export default ({ showSideBar }) => (

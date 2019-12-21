@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { authStart } from '../../../store/actions/auth';
-import './Login.css';
+import './Login.scss';
 
 class LoginForm extends React.Component {
   constructor(props) {

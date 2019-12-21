@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
 import MusicTeacher from '../../../components/MusicTeacher/MusicTeacher';
 import Filterbar from '../../../components/Filterbar/Filterbar';
-import './MusicTeachers.css';
+import './MusicTeachers.scss';
 import optionsImg from './options.svg';
 
 class MusicTeachers extends React.Component {

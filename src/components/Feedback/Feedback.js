@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { msgFeedbackFinish } from '../../store/actions/feedback';
-import './Feedback.css';
+import './Feedback.scss';
 
 const Feedback = ({ msg, onMsgFeedbackFinish }) => (
   (

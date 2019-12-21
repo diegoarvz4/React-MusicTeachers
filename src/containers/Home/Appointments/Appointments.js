@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Appointment from '../../../components/Appointment/Appointment';
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
-import './Appointments.css';
+import './Appointments.scss';
 import { appointmentDelete } from '../../../store/actions/appointments';
 
 class Appointments extends React.Component {

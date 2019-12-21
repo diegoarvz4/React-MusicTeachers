@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { appointmentCreate, appointmentEdit } from '../../../store/actions/appointments';
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
-import './BookAppointment.css';
+import './BookAppointment.scss';
 
 class BookAppointment extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import './ThemeBar.css';
+import './ThemeBar.scss';
 import backArrow from './arrow_back.svg';
 
 const ThemeBar = ({ history, section }) => {

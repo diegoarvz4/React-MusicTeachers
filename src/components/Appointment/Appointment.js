@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import './Appointment.css';
+import './Appointment.scss';
 
 const Appointment = (props) => {
   const formatDate = () => {
@@ -13,24 +13,19 @@ const Appointment = (props) => {
     return date.match(/\d\d:\d\d/)[0];
   };
 
-  const toEditAppointment = (id) => {
-    props.history.push({ pathname: '/music_teachers/book', hash: `edit${id}` });
-  };
-
   const { musicTeacherName, appointmentDelete } = props;
 
   return (
     <div className="AppointmentContainer">
-      <h1 className="AppointmentContainer-teacher">
+      <h2 className="AppointmentContainer-teacher">
         Class with
         <span>
-          { musicTeacherName }
+          { ` ${musicTeacherName}` }
         </span>
-      </h1>
+      </h2>
       <div className="AppointmentContainer-Date">
         <span>{`On ${formatDate()} at ${formatTime()} hours`}</span>
       </div>
-      <span className="edit" onClick={() => toEditAppointment(props.id)}>Edit</span>
       <span className="delete" onClick={appointmentDelete}>Delete</span>
     </div>
   );

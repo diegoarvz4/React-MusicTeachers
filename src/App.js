@@ -5,7 +5,7 @@ import Home from './containers/Home/Home';
 import Welcome from './containers/Welcome/Welcome';
 import Loading from './components/Loading/Loading';
 import Feedback from './components/Feedback/Feedback';
-import './App.css';
+import './App.scss';
 
 
 function App({ isAuthenticated, feedback }) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import signUpStart from '../../../store/actions/signup';
-import './Signup.css';
+import './Signup.scss';
 
 class SignUpForm extends React.Component {
   constructor() {

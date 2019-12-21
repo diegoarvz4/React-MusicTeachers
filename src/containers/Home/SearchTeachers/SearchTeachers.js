@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MusicalInstrument from '../../../components/MusicalInstrument/MusicalInstrument';
 import ThemeBar from '../../../components/ThemeBar/ThemeBar';
-import './SearchTeachers.css';
+import './SearchTeachers.scss';
 
 class SearchTeachers extends React.Component {
   constructor(props) {

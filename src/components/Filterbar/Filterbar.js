@@ -1,5 +1,5 @@
 import React from 'react';
-import './Filterbar.css';
+import './Filterbar.scss';
 import closeIcon from '../Sidebar/close-icon.svg';
 
 class Filterbar extends React.Component {
