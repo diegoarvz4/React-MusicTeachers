@@ -1,10 +1,10 @@
 import React from 'react';
-import './MusicalInstrument.css';
+import './MusicalInstrument.scss';
 
-export default (props) => {
-  return (
+export default ({ name }) => (
+  (
     <div className="MusicalInstrument">
-      { props.name }
+      { name }
     </div>
-  );
-}
+  )
+);

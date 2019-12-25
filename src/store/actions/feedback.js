@@ -1,46 +1,45 @@
 import * as actionTypes from './actionTypes';
 
-export const loadingFeedback = () => {
-  return {
+export const loadingFeedback = () => (
+  {
     type: actionTypes.LOADING_FEEDBACK,
   }
-}
+);
 
-export const loadingFinish = () => {
-  return {
+export const loadingFinish = () => (
+  {
     type: actionTypes.LOADING_FINISH,
   }
-}
+);
 
-export const msgFeedbackSet = (msg) => {
-  return {
+export const msgFeedbackSet = (msg) => (
+  {
     type: actionTypes.MSG_FEEDBACK_SET,
     feedbackMsg: true,
-    msg: msg,
+    msg,
   }
-}
+);
 
-export const msgFeedbackFinish = () => {
-  return {
+export const msgFeedbackFinish = () => (
+  {
     type: actionTypes.MSG_FEEDBACK_FINISH,
     feedbackMsg: false,
     msg: {
       title: '',
       content: '',
       url: '',
-    }
+    },
   }
-}
+);
 
-export const appointmentFeedback = () => {
-  return {
-    type:actionTypes.APPOINTMENT_FEEDBACK,
+export const appointmentFeedback = () => (
+  {
+    type: actionTypes.APPOINTMENT_FEEDBACK,
   }
-}
+);
 
-export const appointmentFinish = () => {
-   return {
-     type: actionTypes.APPOINTMENT_FINISH,
-   }
- }
- 
+export const appointmentFinish = () => (
+  {
+    type: actionTypes.APPOINTMENT_FINISH,
+  }
+);

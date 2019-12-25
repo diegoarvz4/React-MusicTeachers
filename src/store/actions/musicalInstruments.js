@@ -1,25 +1,24 @@
 import * as actionTypes from './actionTypes';
 import axios from '../../axios';
 
-const musicalInstrumentsGet = (msc_inst) => {
-  return {
+const musicalInstrumentsGet = (mscInst) => (
+  {
     type: actionTypes.MUSICAL_INSTRUMENTS_GET,
-    musicalInstruments: msc_inst,
+    musicalInstruments: mscInst,
   }
-}
+);
 
-const musicalInstrumentsStart = (auth_token) => {
-  return dispatch => {
+const musicalInstrumentsStart = (authToken) => (
+  dispatch => {
     axios.get('/musical_instruments', {
       headers: {
-        Authorization: auth_token
+        Authorization: authToken,
       },
     })
-    .then(response => {
-      dispatch(musicalInstrumentsGet(response.data));
-    })
-    .catch(error => console.log(error))
+      .then(response => {
+        dispatch(musicalInstrumentsGet(response.data));
+      });
   }
- }
+);
 
- export { musicalInstrumentsStart, musicalInstrumentsGet }
+export { musicalInstrumentsStart, musicalInstrumentsGet };

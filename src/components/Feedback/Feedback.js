@@ -1,41 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { msgFeedbackFinish } from '../../store/actions/feedback';
 import { Link } from 'react-router-dom';
-import './Feedback.css';
+import { msgFeedbackFinish } from '../../store/actions/feedback';
+import './Feedback.scss';
 
-const Feedback = ({ msg, onMsgFeedbackFinish }) => {
-
-  return (
+const Feedback = ({ msg, onMsgFeedbackFinish }) => (
+  (
     <div className="feedbackContainer">
       <div className="feedbackContainerMsg">
-        <h1>{msg.title}</h1>
+        <h2>{msg.title}</h2>
         <p>{msg.content}</p>
         {
           msg.url
-          ? <Link to={{
-                pathname: `${msg.url}`
-              }}>
-              <button onClick={onMsgFeedbackFinish}>Ok</button>
-            </Link> 
-          : <button onClick={onMsgFeedbackFinish}>Ok</button>
+            ? (
+              <Link to={{
+                pathname: `${msg.url}`,
+              }}
+              >
+                <button onClick={onMsgFeedbackFinish}>Ok</button>
+              </Link>
+            )
+            : <button onClick={onMsgFeedbackFinish}>Ok</button>
         }
-        
       </div>
     </div>
-  );
-}
+  )
+);
 
-const mapStateToProps = state => {
-  return {
+const mapStateToProps = state => (
+  {
     msg: state.feedback.msg,
   }
-}
+);
 
-const mapDispatchToProps = dispatch => {
-  return {
+const mapDispatchToProps = dispatch => (
+  {
     onMsgFeedbackFinish: () => dispatch(msgFeedbackFinish()),
   }
-}
+);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feedback)
+export default connect(mapStateToProps, mapDispatchToProps)(Feedback);
