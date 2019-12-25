@@ -18,8 +18,7 @@ https://github.com/diegoarvz4/RoR-API-MusicTeachers
 
 ## Live Demo
 
- ### Coming Soon!
-
+https://diegoarvz-musicteachers.herokuapp.com/
 
 ## Getting Started
 
