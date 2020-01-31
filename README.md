@@ -40,9 +40,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Run tests
   To run the tests simple run the following command on your terminal: `$ npm test`
-## Deployment
-  Comming Soon
 
+## Future Features
+
+- Update appointments
+- Role management
 
 # Authors
 
