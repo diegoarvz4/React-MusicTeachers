@@ -2,7 +2,28 @@
 
 > This is a React Application that acts as the front-end of a Music Teachers app by fetching from this RoR API https://fathomless-headland-51075.herokuapp.com/.
 
-# Screenshot coming Soon!
+## Screenshots and Walkthrough
+
+### Login
+![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass.png)
+
+### Logged in
+![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass(1).png)
+
+### Music Instruments
+![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass(2).png)
+
+### Music Teachers
+![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass(3).png)
+
+### Booking
+![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass(4).png)
+
+### Appointments
+![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass(5).png)
+
+### Menu
+![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass(6).png)
 
 ## Built With
 
