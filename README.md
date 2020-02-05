@@ -1,6 +1,6 @@
 # Rect - Music Teachers
 
-> This is a React Application that acts as the front-end of a Music Teachers app by fetching from this RoR API https://fathomless-headland-51075.herokuapp.com/.
+> This is a React Application that acts as the front-end of a Music Teachers app by fetching from this RoR API https://fathomless-headland-51075.herokuapp.com/. This application lets you make appointments with music teachers. You can filter by your favorite musical instrument and specific music teacher's properties.
 
 ## Screenshots and Walkthrough
 
