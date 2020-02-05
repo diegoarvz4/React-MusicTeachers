@@ -4,6 +4,8 @@
 
 ## Screenshots and Walkthrough
 
+https://www.loom.com/share/a33dc112c87c4154a6572bda7a176263
+
 ### Login
 ![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass.png)
 
