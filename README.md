@@ -1,6 +1,10 @@
 # Rect - Music Teachers
 
-> This is a React Application that acts as the front-end of a Music Teachers app by fetching from this RoR API https://fathomless-headland-51075.herokuapp.com/. This application lets you make appointments with music teachers. You can filter by your favorite musical instrument and specific music teacher's properties.
+Musiclass is mobile web app for making appointments with music teachers. Search for teachers by musical instrument. This project was built with React JS (frond-end), and Ruby on Rails (back-end).
+
+## RoR API Endpoint
+
+https://fathomless-headland-51075.herokuapp.com/
 
 ## Screenshots and Walkthrough
 
@@ -28,7 +32,6 @@ https://www.loom.com/share/a33dc112c87c4154a6572bda7a176263
 ![Menu](https://diegoarvz.s3-us-west-1.amazonaws.com/Screenshot_2020-02-04+musiclass(6).png)
 
 ## Built With
-
 - React
 - Jest
 - Redux
